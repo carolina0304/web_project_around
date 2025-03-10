@@ -1,6 +1,7 @@
 .footer {
-  width: 100%;
+  max-width: 880px;
   padding-bottom: 60px;
+  margin: auto;
 }
 
 .footer__copyright {
@@ -9,7 +10,6 @@
   font-weight: 400;
   font-size: 18px;
   margin-top: 67px;
-  margin-left: 200px;
   color: rgba(84, 84, 84, 1);
 }
 
