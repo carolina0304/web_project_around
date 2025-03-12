@@ -50,11 +50,22 @@
   width: 24px;
   height: 24px;
   margin-left: 18px;
+  cursor: pointer;
 }
+
+.profile__name_editbutton:hover {
+  opacity: 60%;
+}
+
 .profile__info_addbutton {
   width: 150px;
   height: 50px;
   margin-left: 100px;
+  cursor: pointer;
+}
+
+.profile__info_addbutton:hover {
+  opacity: 60%;
 }
 
 @media screen and (max-width: 544px) {

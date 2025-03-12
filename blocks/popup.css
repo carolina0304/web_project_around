@@ -17,7 +17,13 @@
   font-weight: 900;
   font-size: 24px;
   background: 0;
+  cursor: pointer;
 }
+
+.popup__close:hover {
+  opacity: 60%;
+}
+
 .popup__container {
   position: absolute;
   width: 430px;
@@ -70,8 +76,14 @@
   font-weight: 400;
   font-size: 18px;
   text-align: center;
-  color: #c4c4c4;
+  color: white;
   margin: 48px auto 0 24px;
+  cursor: pointer;
+  background-color: black;
+}
+
+.popup__button:hover {
+  opacity: 80%;
 }
 
 @media screen and (max-width: 544px) {
@@ -118,5 +130,6 @@
     width: 238px;
     height: 46px;
     margin: 46px auto 25px 22px;
+    cursor: pointer;
   }
 }
