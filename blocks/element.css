@@ -38,6 +38,7 @@
   border-style: none;
   cursor: pointer;
   padding: 0;
+  background: rgba(0, 0, 0, 0);
 }
 
 .element__content_like {
