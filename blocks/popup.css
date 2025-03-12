@@ -4,8 +4,10 @@
   margin: auto;
   display: block;
 }
-
-.popup_opened {
+.popup_invisible {
+  display: none;
+}
+.popup__close {
   width: 40px;
   height: 40px;
   position: absolute;
@@ -70,7 +72,11 @@
 }
 
 @media screen and (max-width: 544px) {
-  .popup_opened {
+  .popup {
+    max-width: 282px;
+  }
+
+  .popup__close {
     width: 26px;
     height: 26px;
     background: rgba(0, 0, 0, 0);
