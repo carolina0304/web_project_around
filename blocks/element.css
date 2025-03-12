@@ -9,29 +9,33 @@
 }
 
 .element__card {
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
   background-color: white;
+  border-radius: 10px;
 }
 
 .element__card_image {
   width: 282px;
   height: 282px;
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
 }
 
 .element__content {
   display: flex;
-  justify-content: center;
   border-radius: 10px;
   justify-content: space-around;
+  max-width: 246px;
+  margin: 1px 15px 1px;
 }
 
 .element__content_paragraph {
   font-family: "Inter";
   font-weight: 900;
   font-size: 24px;
+}
+
+.element__content_paragraph_textoverflow {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 .element__content_button {
