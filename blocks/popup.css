@@ -2,7 +2,6 @@
   max-width: 880px;
   background-color: rgba(0, 0, 0, 1);
   margin: auto;
-  display: block;
 }
 .popup_invisible {
   display: none;

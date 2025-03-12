@@ -54,7 +54,7 @@
 .profile__info_addbutton {
   width: 150px;
   height: 50px;
-  margin-left: 165px;
+  margin-left: 100px;
 }
 
 @media screen and (max-width: 544px) {
