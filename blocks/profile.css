@@ -10,7 +10,7 @@
   margin: auto;
 }
 
-.profile__info_avatar {
+.profile__infoavatar {
   width: 120px;
   height: 120px;
   margin-left: 0;
@@ -26,7 +26,7 @@
   flex-direction: row;
 }
 
-.profile__name_names {
+.profile__namenames {
   color: white;
   font-family: "Inter";
   font-weight: 500;
@@ -37,7 +37,7 @@
   width: 325px;
 }
 
-.profile__name_subname {
+.profile__namesubname {
   color: white;
   font-family: "Inter";
   font-weight: 400;
@@ -47,25 +47,25 @@
   margin-top: 0;
 }
 
-.profile__name_editbutton {
+.profile__nameeditbutton {
   width: 24px;
   height: 24px;
   margin-left: 18px;
   cursor: pointer;
 }
 
-.profile__name_editbutton:hover {
+.profile__nameeditbutton:hover {
   opacity: 60%;
 }
 
-.profile__info_addbutton {
+.profile__infoaddbutton {
   width: 150px;
   height: 50px;
   margin-left: 100px;
   cursor: pointer;
 }
 
-.profile__info_addbutton:hover {
+.profile__infoaddbutton:hover {
   opacity: 60%;
 }
 
@@ -79,19 +79,19 @@
   .profile__name {
     width: 400px;
   }
-  .profile__name_names {
+  .profile__namenames {
     max-width: 250px;
     font-size: 30px;
   }
-  .profile__name_subname {
+  .profile__namesubname {
     margin-left: 30px;
   }
 
-  .profile__name_editbutton:hover {
+  .profile__nameeditbutton:hover {
     opacity: 60%;
   }
 
-  .profile__info_addbutton {
+  .profile__infoaddbutton {
     width: 130px;
     margin-left: 60px;
   }
@@ -108,7 +108,7 @@
     flex-direction: column;
   }
 
-  .profile__info_avatar {
+  .profile__infoavatar {
     margin: 42px auto 0;
   }
 
@@ -116,7 +116,7 @@
     width: 285px;
     height: 50px;
   }
-  .profile__name_names {
+  .profile__namenames {
     font-size: 22px;
     margin-top: 32px;
     margin-bottom: 0;
@@ -124,19 +124,19 @@
     text-align: center;
   }
 
-  .profile__name_subname {
+  .profile__namesubname {
     font-size: 14px;
     margin: auto;
   }
 
-  .profile__name_editbutton {
+  .profile__nameeditbutton {
     width: 18px;
     height: 18px;
     margin-top: 32px;
     margin-left: 0;
   }
 
-  .profile__info_addbutton {
+  .profile__infoaddbutton {
     width: 282px;
     margin: 86px auto 0;
   }
