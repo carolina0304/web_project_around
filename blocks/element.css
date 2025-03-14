@@ -13,7 +13,7 @@
   border-radius: 10px;
 }
 
-.element__card_image {
+.element__cardimage {
   width: 282px;
   height: 282px;
 }
@@ -26,26 +26,26 @@
   margin: 1px 15px 1px;
 }
 
-.element__content_paragraph {
+.element__contentparagraph {
   font-family: "Inter";
   font-weight: 900;
   font-size: 24px;
 }
 
-.element__content_paragraph_textoverflow {
+.element__contentparagraph_textoverflow {
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
 }
 
-.element__content_button {
+.element__contentbutton {
   border-style: none;
   cursor: pointer;
   padding: 0;
   background: rgba(0, 0, 0, 0);
 }
 
-.element__content_like {
+.element__contentlike {
   width: 21px;
   height: 19px;
 }
