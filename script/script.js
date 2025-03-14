@@ -1,21 +1,20 @@
-const popup = document.querySelector("#popup1");
+const popupButton = document.querySelector(".popup__button");
 const button1 = document.querySelector(".profile__name_editbutton");
+const popup = document.querySelector("#popup1");
+const inputname = document.querySelector("#name2");
+const inputlastname = document.querySelector("#name3");
+
+const profilename = document.querySelector(".profile__name_names");
+const profilesubname = document.querySelector(".profile__name_subname");
 
 button1.addEventListener("click", () => {
   console.log("Hola Mundo");
-  popup.classList.toggle("popup_invisible");
+  popup.classList.remove("popup_invisible");
 });
 
-const buttonclose = document.querySelector(".popup__close");
-
-buttonclose.addEventListener("click", () => {
+popupButton.addEventListener("click", (e) => {
+  e.preventDefault();
+  profilename.textContent = inputname.value;
+  profilesubname.textContent = inputlastname.value;
   popup.classList.toggle("popup_invisible");
 });
-
-const formElement = document.querySelector(".popup__button");
-function handleProfileFormSubmit(evt) {
-  evt.preventDefault();
-  let nameInput = document.querySelector(".popup__input");
-  let jobInput = document.querySelector("profile__name_names");
-}
-formElement.addEventListener("submit", handleProfileFormSubmit);
