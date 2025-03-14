@@ -20,3 +20,7 @@ popupButton.addEventListener("click", (e) => {
   profilesubname.textContent = inputlastname.value;
   popup.classList.toggle("popup_invisible");
 });
+
+popupclose.addEventListener("click", () => {
+  popup.classList.add("popup_invisible");
+});

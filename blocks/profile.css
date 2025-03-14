@@ -121,6 +121,7 @@
     margin-top: 32px;
     margin-bottom: 0;
     width: 224px;
+    text-align: center;
   }
 
   .profile__name_subname {
