@@ -12,6 +12,11 @@
   margin-top: 67px;
   color: rgba(84, 84, 84, 1);
 }
+@media screen and (max-width: 1024px) {
+  .footer__copyright {
+    margin: 50px 150px 0;
+  }
+}
 
 @media screen and (max-width: 544px) {
   .footer {

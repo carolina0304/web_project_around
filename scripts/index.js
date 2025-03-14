@@ -7,9 +7,11 @@ const inputlastname = document.querySelector("#name3");
 const profilename = document.querySelector(".profile__name_names");
 const profilesubname = document.querySelector(".profile__name_subname");
 
+const popupclose = document.querySelector(".popup__close");
+
 button1.addEventListener("click", () => {
   console.log("Hola Mundo");
-  popup.classList.remove("popup_invisible");
+  popup.classList.toggle("popup_invisible");
 });
 
 popupButton.addEventListener("click", (e) => {

@@ -49,7 +49,11 @@
   width: 21px;
   height: 19px;
 }
-
+@media screen and (max-width: 1024px) {
+  .element {
+    margin: 0 100px 0 100px;
+  }
+}
 @media screen and (max-width: 544px) {
   .element {
     flex-direction: column;

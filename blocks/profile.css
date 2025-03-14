@@ -69,6 +69,34 @@
   opacity: 60%;
 }
 
+@media screen and (max-width: 1024px) {
+  .profile {
+    max-width: 700px;
+  }
+  .profile__info {
+    max-width: 700px;
+  }
+  .profile__name {
+    width: 400px;
+  }
+  .profile__name_names {
+    max-width: 250px;
+    font-size: 30px;
+  }
+  .profile__name_subname {
+    margin-left: 30px;
+  }
+
+  .profile__name_editbutton:hover {
+    opacity: 60%;
+  }
+
+  .profile__info_addbutton {
+    width: 130px;
+    margin-left: 60px;
+  }
+}
+
 @media screen and (max-width: 544px) {
   .profile {
     width: 100%;

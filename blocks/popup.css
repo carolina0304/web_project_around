@@ -32,7 +32,6 @@
   border-radius: 10px;
   top: 18%;
   left: 35%;
-  margin: auto;
 }
 
 .popup__title {
@@ -84,6 +83,16 @@
 
 .popup__button:hover {
   opacity: 80%;
+}
+
+@media screen and (max-width: 1024px) {
+  .popup {
+    max-width: 700px;
+  }
+  .popup__container {
+    top: 20%;
+    left: 30%;
+  }
 }
 
 @media screen and (max-width: 544px) {
