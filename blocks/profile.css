@@ -13,7 +13,7 @@
 .profile__infoavatar {
   width: 120px;
   height: 120px;
-  margin-left: 0;
+  margin-left: 30px;
   margin-top: 40px;
 }
 
@@ -23,7 +23,6 @@
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  flex-direction: row;
 }
 
 .profile__namenames {
@@ -35,6 +34,9 @@
   margin-left: 30px;
   margin-bottom: 16px;
   width: 325px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 .profile__namesubname {
@@ -45,6 +47,10 @@
   line-height: 100%;
   margin-left: 30px;
   margin-top: 0;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 325px;
 }
 
 .profile__nameeditbutton {
@@ -71,29 +77,33 @@
 
 @media screen and (max-width: 1024px) {
   .profile {
-    max-width: 700px;
+    max-width: 100%;
+    margin: auto;
   }
   .profile__info {
-    max-width: 700px;
+    max-width: 100%;
+    margin: auto;
   }
+
   .profile__name {
-    width: 400px;
+    width: 445px;
   }
+
   .profile__namenames {
-    max-width: 250px;
+    width: 230px;
     font-size: 30px;
   }
   .profile__namesubname {
-    margin-left: 30px;
+    margin-left: 49px;
+    width: 230px;
   }
 
-  .profile__nameeditbutton:hover {
-    opacity: 60%;
+  .profile__nameeditbutton {
   }
 
   .profile__infoaddbutton {
     width: 130px;
-    margin-left: 60px;
+    margin-left: -80px;
   }
 }
 
@@ -127,6 +137,7 @@
   .profile__namesubname {
     font-size: 14px;
     margin: auto;
+    text-align: center;
   }
 
   .profile__nameeditbutton {

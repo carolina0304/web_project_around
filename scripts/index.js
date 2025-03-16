@@ -1,15 +1,15 @@
 const popupButton = document.querySelector(".popup__button");
-const button1 = document.querySelector(".profile__nameeditbutton");
-const popup = document.querySelector("#popup1");
-const inputname = document.querySelector("#name2");
-const inputlastname = document.querySelector("#name3");
+const button = document.querySelector(".profile__nameeditbutton");
+const popup = document.querySelector("#popup");
+const inputname = document.querySelector("#name");
+const inputlastname = document.querySelector("#subname");
 
 const profilename = document.querySelector(".profile__namenames");
 const profilesubname = document.querySelector(".profile__namesubname");
 
 const popupclose = document.querySelector(".popup__close");
 
-button1.addEventListener("click", () => {
+button.addEventListener("click", () => {
   console.log("Hola Mundo");
   popup.classList.toggle("popup_invisible");
 });
