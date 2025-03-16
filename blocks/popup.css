@@ -92,7 +92,7 @@
   }
   .popup__container {
     top: 20%;
-    left: 30%;
+    left: 297px;
   }
 }
 
@@ -111,8 +111,8 @@
   .popup__container {
     width: 282px;
     height: 322px;
-    top: 15%;
-    left: 6%;
+    top: 123px;
+    left: auto;
   }
 
   .popup__title {

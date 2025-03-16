@@ -8,6 +8,7 @@
   display: flex;
   align-items: center;
   margin: auto;
+  justify-content: center;
 }
 
 .profile__infoavatar {
@@ -92,13 +93,16 @@
   .profile__namenames {
     width: 230px;
     font-size: 30px;
+    margin: 20px 0 0;
   }
   .profile__namesubname {
     margin-left: 49px;
     width: 230px;
+    margin: 0;
   }
 
   .profile__nameeditbutton {
+    margin: 0;
   }
 
   .profile__infoaddbutton {
