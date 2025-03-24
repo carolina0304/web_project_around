@@ -6,6 +6,10 @@
 .popup_invisible {
   display: none;
 }
+
+.popup_invisiblelugar {
+  display: none;
+}
 .popup__close {
   width: 40px;
   height: 40px;

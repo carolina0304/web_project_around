@@ -11,6 +11,8 @@
 .element__card {
   background-color: white;
   border-radius: 10px;
+  max-width: 282px;
+  max-height: 361px;
 }
 
 .element__cardimage {
@@ -20,10 +22,11 @@
 
 .element__content {
   display: flex;
-  border-radius: 10px;
   justify-content: space-around;
   max-width: 246px;
-  margin: 1px 15px 1px;
+  position: relative;
+  top: -25px;
+  right: -15px;
 }
 
 .element__contentparagraph {
@@ -49,6 +52,17 @@
   width: 21px;
   height: 19px;
 }
+.element__delete {
+  width: 18px;
+  height: 19px;
+  position: relative;
+  top: -270px;
+  left: 250px;
+  border: none;
+  cursor: pointer;
+  background: url(../images/Trash.svg) center no-repeat;
+}
+
 @media screen and (max-width: 1024px) {
   .element {
     margin: 0 100px 0 100px;

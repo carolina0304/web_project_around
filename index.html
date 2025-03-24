@@ -56,6 +56,11 @@
               alt="Valle de yosemite"
               class="element__cardimage"
             />
+            <button
+              id="popupdelete"
+              type="button"
+              class="element__delete"
+            ></button>
             <div class="element__content">
               <p class="element__contentparagraph">Valle de Yosemite</p>
               <button type="button" class="element__contentbutton">
@@ -72,7 +77,11 @@
               src="./images/LagoLouis.png"
               alt="Lago Louis"
               class="element__cardimage"
-            />
+            /><button
+              id="popupdelete"
+              type="button"
+              class="element__delete"
+            ></button>
             <div class="element__content">
               <p class="element__contentparagraph">Lago Louise</p>
               <button type="button" class="element__contentbutton">
@@ -90,6 +99,11 @@
               alt="Montañas Calvas"
               class="element__cardimage"
             />
+            <button
+              id="popupdelete"
+              type="button"
+              class="element__delete"
+            ></button>
             <div class="element__content">
               <p class="element__contentparagraph">Montañas Calvas</p>
               <button type="button" class="element__contentbutton">
@@ -107,6 +121,11 @@
               alt="Latemar"
               class="element__cardimage"
             />
+            <button
+              id="popupdelete"
+              type="button"
+              class="element__delete"
+            ></button>
             <div class="element__content">
               <p class="element__contentparagraph">Latemar</p>
               <button type="button" class="element__contentbutton">
@@ -124,6 +143,11 @@
               alt="Vanois National"
               class="element__cardimage"
             />
+            <button
+              id="popupdelete"
+              type="button"
+              class="element__delete"
+            ></button>
             <div class="element__content">
               <p
                 class="element__contentparagraph element__contentparagraph_textoverflow"
@@ -145,6 +169,11 @@
               alt="Lago di Braies"
               class="element__cardimage"
             />
+            <button
+              id="popupdelete"
+              type="button"
+              class="element__delete"
+            ></button>
             <div class="element__content">
               <p class="element__contentparagraph">Lago di Braies</p>
               <button type="button" class="element__contentbutton">
@@ -183,6 +212,35 @@
               required
             />
             <button type="submit" class="popup__button">Guardar</button>
+          </fieldset>
+        </form>
+      </div>
+      <div id="popuplugar" class="popup popup_invisiblelugar">
+        <form action="#" class="popup__container">
+          <button id="popupclose_lugar" type="button" class="popup__close">
+            x
+          </button>
+          <h2 class="popup__title">Nuevo lugar</h2>
+          <fieldset class="popup__fieldset">
+            <label id="labeltitulo" class="popup__label"></label>
+            <input
+              type="text"
+              class="popup__input"
+              id="name_titulo"
+              placeholder="Titulo"
+              required
+            />
+            <label id="labelenlace" class="popup__label"></label>
+            <input
+              type="text"
+              class="popup__input"
+              id="subname_enlace"
+              placeholder="Enlace a la imagen"
+              required
+            />
+            <button id="popup_guardar" type="submit" class="popup__button">
+              Guardar
+            </button>
           </fieldset>
         </form>
       </div>
