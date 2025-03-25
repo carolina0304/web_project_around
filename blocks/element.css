@@ -63,6 +63,10 @@
   background: url(../images/Trash.svg) center no-repeat;
 }
 
+.element__delete:hover {
+  opacity: 60%;
+}
+
 @media screen and (max-width: 1024px) {
   .element {
     margin: 0 100px 0 100px;
