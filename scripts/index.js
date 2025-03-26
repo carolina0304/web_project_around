@@ -41,7 +41,7 @@ buttonadd.addEventListener("click", () => {
 popupguardar.addEventListener("click", (e) => {
   e.preventDefault();
   profiletitle.textContent = inputtitle.value;
-  profileenlace.textContent = inputenlace.linkvalue;
+  profileenlace.textContent = inputenlace.value;
   popuplugar.classList.toggle("popup_invisiblelugar");
 });
 
@@ -49,8 +49,8 @@ closeplace.addEventListener("click", () => {
   popuplugar.classList.add("popup_invisiblelugar");
 });
 
-const cards = document.querySelector(".element__card");
-const template = document.querySelector("template");
+const element = document.querySelector(".element");
+const template = document.querySelector("#template");
 const initialCards = [
   {
     name: "Valle de Yosemite",
@@ -79,6 +79,7 @@ const initialCards = [
 ];
 
 initialCards.forEach((card) => {
+  console.log("hola");
   const clon = template.content.cloneNode(true);
   const image = clon.querySelector(".element__cardimage");
   const buttondelete = clon.querySelector("#popupdelete");
@@ -86,13 +87,12 @@ initialCards.forEach((card) => {
   const buttonlike = clon.querySelector(".element__contentlike");
 
   image.src = card.link;
-  buttondelete.textContent = card.button;
   title.textContent = card.name;
-  buttonlike.click = card.style;
-});
 
-buttondelete.addEventListener("click", function () {
-  cards.forEach((card) => {
-    cards.remove();
+  buttondelete.addEventListener("click", function () {
+    {
+      console.log("hola");
+    }
   });
+  element.appendChild(clon);
 });

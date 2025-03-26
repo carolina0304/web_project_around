@@ -33,9 +33,6 @@
   font-family: "Inter";
   font-weight: 900;
   font-size: 24px;
-}
-
-.element__contentparagraph_textoverflow {
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
