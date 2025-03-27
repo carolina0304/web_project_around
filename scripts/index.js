@@ -25,30 +25,6 @@ popupclose.addEventListener("click", () => {
   popup.classList.add("popup_invisible");
 });
 
-const popuplugar = document.querySelector("#popuplugar");
-const buttonadd = document.querySelector(".profile__infoaddbutton");
-const popupguardar = document.querySelector("#popup_guardar");
-const profiletitle = document.querySelector(".element__contentparagraph");
-const profileenlace = document.querySelector(".element__cardimage");
-const inputtitle = document.querySelector("#name_titulo");
-const inputenlace = document.querySelector("#subname_enlace");
-const closeplace = document.querySelector("#popupclose_lugar");
-
-buttonadd.addEventListener("click", () => {
-  popuplugar.classList.toggle("popup_invisiblelugar");
-});
-
-popupguardar.addEventListener("click", (e) => {
-  e.preventDefault();
-  profiletitle.textContent = inputtitle.value;
-  profileenlace.textContent = inputenlace.value;
-  popuplugar.classList.toggle("popup_invisiblelugar");
-});
-
-closeplace.addEventListener("click", () => {
-  popuplugar.classList.add("popup_invisiblelugar");
-});
-
 const element = document.querySelector(".element");
 const template = document.querySelector("#template");
 const initialCards = [
@@ -87,12 +63,44 @@ initialCards.forEach((card) => {
   const buttonlike = clon.querySelector(".element__contentlike");
 
   image.src = card.link;
+  image.alt = card.name;
   title.textContent = card.name;
 
   buttondelete.addEventListener("click", function () {
     {
-      console.log("hola");
+      card.remove();
     }
+
+    buttonlike.addEventListener("click", () => {
+      buttonlike.classList.toggle("element__contentlike");
+    });
+    image.addEventListener("click", () => {
+      handlePopupImageOpen(card.name, card.link);
+    });
   });
   element.appendChild(clon);
+});
+
+const popuplugar = document.querySelector("#popuplugar");
+const buttonadd = document.querySelector(".profile__infoaddbutton");
+const popupguardar = document.querySelector("#popup_guardar");
+const profiletitle = document.querySelector(".element__contentparagraph");
+const profileenlace = document.querySelector(".element__cardimage");
+const inputtitle = document.querySelector("#name_titulo");
+const inputenlace = document.querySelector("#subname_enlace");
+const closeplace = document.querySelector("#popupclose_lugar");
+
+buttonadd.addEventListener("click", () => {
+  popuplugar.classList.toggle("popup_invisiblelugar");
+});
+
+popupguardar.addEventListener("click", (e) => {
+  e.preventDefault();
+  profiletitle.textContent = inputtitle.value;
+  profileenlace.textContent = inputenlace.value;
+  popuplugar.classList.toggle("popup_invisiblelugar");
+});
+
+closeplace.addEventListener("click", () => {
+  popuplugar.classList.add("popup_invisiblelugar");
 });
