@@ -118,7 +118,7 @@ function handleCardFormSubmit(evt) {
   const card = { link: inputenlace.value, name: inputtitle.value };
   const cardElement = createCard(card);
   const cards = document.querySelector(".element");
-  cards, prepend(cardElement);
+  cards.prepend(cardElement);
 }
 
 initialCards.forEach(function (card) {
