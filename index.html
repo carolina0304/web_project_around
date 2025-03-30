@@ -49,32 +49,49 @@
             />
           </div>
         </section>
+        <!--CARTAS-->
         <section class="element"></section>
-      </main>
-      <template id="template">
-        <div class="element__card">
-          <img id="element__cardimage" class="element__cardimage" />
-          <button
-            id="popupdelete"
-            type="button"
-            class="element__delete"
-          ></button>
-          <div class="element__content">
-            <p id="element_paragraph" class="element__contentparagraph"></p>
-            <button type="button" class="element__contentbutton">
-              <img
-                src="./images/Group.svg"
-                alt="like"
-                class="element__contentlike"
-              />
-            </button>
+        <template id="template">
+          <div class="element__card">
+            <img
+              id="element__cardimage"
+              class="element__cardimage"
+              src=""
+              alt=""
+            />
+            <button
+              id="popupdelete"
+              type="button"
+              class="element__delete"
+            ></button>
+            <div class="element__content">
+              <p id="element_paragraph" class="element__contentparagraph"></p>
+              <button type="button" class="element__contentbutton">
+                <img
+                  src="./images/Group.svg"
+                  alt="like"
+                  class="element__contentlike"
+                />
+              </button>
+            </div>
+          </div>
+        </template>
+        <!--Pop up Imagen grande-->
+        <div class="popup__imagebig">
+          <div class="popup__imagebigcontainer">
+            <div class="popup__imagebig-buttonclose">X</div>
+            <img class="popup__imagebig-enlace" src="" alt="" />
+            <div class="popup__imagebig-text">
+              <p class="popup__imagebig-text"></p>
+            </div>
           </div>
         </div>
-      </template>
+      </main>
       <footer class="footer">
         <p class="footer__copyright">&copy; 2025 Around The U.S.</p>
       </footer>
-      <div id="popup" class="popup popup_invisible">
+      <!--Pop up Editar Perfil-->
+      <div class="popup">
         <form action="#" class="popup__container">
           <button id="popupclose" type="button" class="popup__close">x</button>
           <h2 class="popup__title">Editar perfil</h2>
@@ -99,7 +116,8 @@
           </fieldset>
         </form>
       </div>
-      <div id="popuplugar" class="popup popup_invisiblelugar">
+      <!--Pop up Nuevo lugar-->
+      <div id="popuplugar" class="popup__lugar">
         <form action="#" class="popup__container">
           <button id="popupclose_lugar" type="button" class="popup__close">
             x
