@@ -11,7 +11,7 @@ const popupButton = document.querySelector(".popup__button");
 
 /*Const Nuevo lugar*/
 const popuplugar = document.querySelector(".popup__lugar");
-const popupformadd = document.querySelector(".popup__container");
+const popupformadd = document.querySelector(".popup__lugar-form");
 const inputtitle = document.querySelector("#name_titulo");
 const inputenlace = document.querySelector("#subname_enlace");
 const popupguardar = document.querySelector("#popup_guardar");

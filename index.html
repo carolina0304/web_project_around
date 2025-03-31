@@ -118,29 +118,37 @@
       </div>
       <!--Pop up Nuevo lugar-->
       <div id="popuplugar" class="popup__lugar">
-        <form action="#" class="popup__container">
-          <button id="popupclose_lugar" type="button" class="popup__close">
+        <form action="#" class="popup__lugar-form">
+          <button
+            id="popupclose_lugar"
+            type="button"
+            class="popup__lugar-close"
+          >
             x
           </button>
-          <h2 class="popup__title">Nuevo lugar</h2>
-          <fieldset class="popup__fieldset">
-            <label id="labeltitulo" class="popup__label"></label>
+          <h2 class="popup__lugar-title">Nuevo lugar</h2>
+          <fieldset class="popup__lugar-fieldset">
+            <label id="labeltitulo" class="popup__lugar-label"></label>
             <input
               type="text"
-              class="popup__input"
+              class="popup__lugar-input"
               id="name_titulo"
               placeholder="Titulo"
               required
             />
-            <label id="labelenlace" class="popup__label"></label>
+            <label id="labelenlace" class="popup__lugar-label"></label>
             <input
               type="text"
-              class="popup__input"
+              class="popup__lugar-input"
               id="subname_enlace"
               placeholder="Enlace a la imagen"
               required
             />
-            <button id="popup_guardar" type="submit" class="popup__button">
+            <button
+              id="popup_guardar"
+              type="submit"
+              class="popup__lugar-button"
+            >
               Guardar
             </button>
           </fieldset>

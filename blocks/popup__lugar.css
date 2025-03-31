@@ -1,12 +1,18 @@
-.popup {
-  max-width: 880px;
-  background-color: rgba(0, 0, 0, 1);
-  margin: auto;
+.popup__lugar {
   display: none;
+}
+
+.popup__lugar-form {
+  width: 430px;
+  height: 330px;
+  background-color: white;
+  border-radius: 10px;
+  top: 195px;
+  left: 30%;
   position: fixed;
 }
 
-.popup__close {
+.popup__lugar-close {
   width: 40px;
   height: 40px;
   position: absolute;
@@ -20,39 +26,29 @@
   cursor: pointer;
 }
 
-.popup__close:hover {
+.popup__lugar-close {
   opacity: 60%;
 }
 
-.popup__container {
-  width: 430px;
-  height: 330px;
-  background-color: white;
-  border-radius: 10px;
-  top: 195px;
-  left: 30%;
-  position: fixed;
-}
-
-.popup__title {
+.popup__lugar-title {
   font-family: "Inter";
   font-weight: 900;
   font-size: 24px;
   margin: 34px 64px 0 36px;
 }
 
-.popup__fieldset {
+.popup__lugar-fieldset {
   max-width: 430px;
   border: none;
 }
 
-.popup__label {
+.popup__lugar-label {
   width: 358px;
   height: 28px;
   border-width: 1px;
 }
 
-.popup__input {
+.popup__lugar-input {
   width: 358px;
   height: 28px;
   border-width: 1px;
@@ -66,7 +62,7 @@
   border-right: none;
 }
 
-.popup__button {
+.popup__lugar-button {
   width: 358px;
   height: 50px;
   border-radius: 2px;
@@ -81,66 +77,58 @@
   background-color: black;
 }
 
-.popup__button:hover {
+.popup__lugar-button:hover {
   opacity: 80%;
 }
 
-/* imagen grande */
-.popup__open {
+.popup__add_open {
   display: flex;
   background-color: rgba(0, 0, 0, 0, 5);
 }
 
 @media screen and (max-width: 1024px) {
-  .popup {
-    max-width: 700px;
-  }
-  .popup__container {
+  .popup__lugar-form {
     left: 18%;
   }
 }
 
 @media screen and (max-width: 544px) {
-  .popup {
-    max-width: 282px;
-  }
-
-  .popup__close {
+  .popup__lugar-close {
     width: 26px;
     height: 26px;
     top: -40px;
     left: 264px;
   }
 
-  .popup__container {
+  .popup__lugar-form {
     width: 282px;
     height: 322px;
     top: 123px;
     left: 5%;
   }
 
-  .popup__title {
+  .popup__lugar-title {
     font-size: 18px;
     margin: 25px 22px 0 22px;
   }
 
-  .popup__fieldset {
+  .popup__lugar-fieldset {
     max-width: 270px;
     padding: 0;
   }
 
-  .popup__label {
+  .popup__lugar-label {
     width: 238px;
     height: 26px;
   }
 
-  .popup__input {
+  .popup__lugar-input {
     width: 238px;
     height: 26px;
     margin: 30px auto 0 24px;
   }
 
-  .popup__button {
+  .popup__lugar-button {
     width: 238px;
     height: 46px;
     margin: 46px auto 25px 22px;
