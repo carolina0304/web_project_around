@@ -11,10 +11,11 @@ const popupButton = document.querySelector(".popup__button");
 
 /*Const Nuevo lugar*/
 const popuplugar = document.querySelector(".popup__lugar");
-const popupformadd = document.querySelector(".popup__lugar-form");
+/** */
+//const popupformadd = document.querySelector(".popup__lugar-form");
 const inputtitle = document.querySelector("#name_titulo");
 const inputenlace = document.querySelector("#subname_enlace");
-const popupguardar = document.querySelector("#popup_guardar");
+const popupGuardar = document.querySelector("#popup_guardar");
 const closeplace = document.querySelector("#popupclose_lugar");
 
 /*Const imagen grande*/
@@ -82,7 +83,6 @@ function addCards() {
   initialCards.forEach((item) => {
     const card = createCard(item.name, item.link);
     element.append(card);
-    popuplugar.classList.remove("popup__add_open");
   });
 }
 
@@ -96,6 +96,7 @@ function createCard(data) {
 
   cardImage.src = data.link;
   cardImage.alt = data.name;
+  6;
   cardName.textContent = data.name;
 
   cardDelete.addEventListener("click", () => {
@@ -113,8 +114,7 @@ function createCard(data) {
   return card;
 }
 
-function handleCardFormSubmit(evt) {
-  evt.preventDefault();
+function handleCardFormSubmit() {
   const card = { link: inputenlace.value, name: inputtitle.value };
   const cardElement = createCard(card);
   const cards = document.querySelector(".element");
@@ -128,12 +128,12 @@ initialCards.forEach(function (card) {
 });
 
 /*popup editar */
-function handleProfileFormSubmit(evt) {
+const handleProfileFormSubmit = (evt) => {
   evt.preventDefault();
   profilename.textContent = inputname.value;
   profilesubname.textContent = inputlastname.value;
   popup.classList.remove("popup__open");
-}
+};
 
 function handlePopupImageOpen(name, link) {
   const popupImg = popupimagebig.querySelector(".popup__imagebig-enlace");
@@ -144,9 +144,9 @@ function handlePopupImageOpen(name, link) {
   popupimagebig.classList.add("popup__image_opened");
 }
 
-function handlePopupImageClose() {
+const handlePopupImageClose = () => {
   popupimagebig.classList.remove("popup__image_opened");
-}
+};
 
 popupform.addEventListener("submit", handleProfileFormSubmit);
 button.addEventListener("click", handlePopupOpen);
@@ -155,5 +155,9 @@ popupclose.addEventListener("click", handlePopupClose);
 buttonadd.addEventListener("click", openPopupAddOpen);
 closeplace.addEventListener("click", openPopupAddClose);
 
-popupformadd.addEventListener("submit", handleCardFormSubmit);
+popupGuardar.addEventListener("click", (evt) => {
+  evt.preventDefault();
+  handleCardFormSubmit();
+  openPopupAddClose();
+});
 imagebigclose.addEventListener("click", handlePopupImageClose);

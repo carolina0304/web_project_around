@@ -8,7 +8,7 @@
   background-color: white;
   border-radius: 10px;
   top: 195px;
-  left: 30%;
+  left: 35%;
   position: fixed;
 }
 
@@ -88,7 +88,7 @@
 
 @media screen and (max-width: 1024px) {
   .popup__lugar-form {
-    left: 18%;
+    left: 290px;
   }
 }
 
@@ -104,7 +104,7 @@
     width: 282px;
     height: 322px;
     top: 123px;
-    left: 5%;
+    left: 20px;
   }
 
   .popup__lugar-title {
