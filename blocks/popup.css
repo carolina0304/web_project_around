@@ -66,6 +66,33 @@
   border-right: none;
 }
 
+.popup__input:invalid {
+  border-bottom: 1px solid red;
+}
+
+.popup__input:valid {
+  border-bottom: 1px solid black;
+}
+
+.popup__input_type_error {
+  border-bottom-color: red;
+}
+
+.popup__input-error {
+  font-family: "Inter";
+  font-weight: 400;
+  font-size: 12px;
+  color: red;
+  margin-left: 30px;
+}
+
+.popup__input-error_active {
+  border-bottom-color: red;
+}
+
+.popup__submit_inactive {
+  opacity: 20%;
+}
 .popup__button {
   width: 358px;
   height: 50px;
@@ -78,6 +105,14 @@
   color: white;
   margin: 48px auto 0 24px;
   cursor: pointer;
+  background-color: black;
+}
+
+.popup__button:invalid {
+  opacity: 20%;
+}
+
+.popup__button:valid {
   background-color: black;
 }
 
