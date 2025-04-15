@@ -102,9 +102,9 @@
               class="popup__input popup__input_type_error"
               id="name"
               placeholder="Nombre"
-              required
               minlength="2"
               maxlength="40"
+              required
             />
             <span class="popup__input-error"
               >Por favor, rellena este campo.</span
@@ -134,7 +134,7 @@
       </div>
       <!--Pop up Nuevo lugar-->
       <div id="popuplugar" class="popup">
-        <form action="#" class="popup__form" id="#popup__lugar-form">
+        <form action="#" class="popup__form" id="#popup__lugar-form" novalite>
           <button id="popupclose_lugar" type="button" class="popup__close">
             x
           </button>
@@ -143,20 +143,32 @@
             <label id="labeltitulo" class="popup__label"></label>
             <input
               type="text"
-              class="popup__input"
+              class="popup__input popup__input_type_error"
               id="name_titulo"
               placeholder="Titulo"
+              minlength="2"
+              maxlength="30"
               required
             />
+            <span class="popup__input-error"
+              >Por favor, rellena este campo.</span
+            >
             <label id="labelenlace" class="popup__lugar-label"></label>
             <input
               type="url"
-              class="popup__input"
+              class="popup__input popup__input_type_error"
               id="subname_enlace"
               placeholder="URL a la imagen"
               required
             />
-            <button id="popup_guardar" type="submit" class="popup__button">
+            <span class="popup__input-error"
+              >Por favor, rellena este campo.</span
+            >
+            <button
+              id="popup_guardar"
+              type="submit"
+              class="popup__button popup__button_disabled"
+            >
               Guardar
             </button>
           </fieldset>
