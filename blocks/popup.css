@@ -86,13 +86,23 @@
   margin-left: 30px;
 }
 
-.popup__input-error_active {
-  border-bottom-color: red;
+.popup__input_type_error {
+  border-bottom: 1px solid #f00;
 }
 
-.popup__submit_inactive {
-  opacity: 20%;
+.popup__button_disabled {
+  background-color: #c4c4c4;
+  cursor: default;
 }
+
+/*.popup__input-error_active {
+  border-bottom-color: red;
+}*/
+
+/*.popup__submit_inactive {
+  opacity: 20%;
+}*/
+
 .popup__button {
   width: 358px;
   height: 50px;

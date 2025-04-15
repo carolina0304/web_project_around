@@ -99,7 +99,7 @@
             <label id="labelname" class="popup__label"></label>
             <input
               type="text"
-              class="popup__input"
+              class="popup__input popup__input_type_error"
               id="name"
               placeholder="Nombre"
               required
@@ -122,7 +122,11 @@
             <span class="popup__input-error"
               >Por favor, rellena este campo.</span
             >
-            <button type="submit" class="popup__button" id="popup_guardaredit">
+            <button
+              type="submit"
+              class="popup__button popup__button_disabled"
+              id="popup_guardaredit"
+            >
               Guardar
             </button>
           </fieldset>
