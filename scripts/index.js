@@ -1,16 +1,20 @@
+/*import { resetValidation, validationConfig } from "./validate";
+
+resetValidation();*/
+
 /*Const Editar perfil*/
 const popup = document.querySelector(".popup");
 const button = document.querySelector(".profile__nameeditbutton");
 const popupclose = document.querySelector(".popup__close");
-const popupform = document.querySelector(".popup__container");
+const popupform = document.querySelector("#popup__formedit");
 const inputname = document.querySelector("#name");
 const inputlastname = document.querySelector("#subname");
 const profilename = document.querySelector(".profile__namenames");
 const profilesubname = document.querySelector(".profile__namesubname");
-const popupButton = document.querySelector(".popup__button");
+const popupButton = document.querySelector("#popup_guardaredit");
 
 /*Const Nuevo lugar*/
-const popuplugar = document.querySelector(".popup__lugar");
+const popuplugar = document.querySelector("#popuplugar");
 /** */
 //const popupformadd = document.querySelector(".popup__lugar-form");
 const inputtitle = document.querySelector("#name_titulo");

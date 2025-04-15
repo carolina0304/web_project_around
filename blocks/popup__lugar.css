@@ -1,8 +1,8 @@
-.popup__lugar {
+/*.popup__lugar {
   display: none;
-}
+}*/
 
-.popup__lugar-form {
+/*.popup__lugar-form {
   width: 430px;
   height: 330px;
   background-color: white;
@@ -10,9 +10,9 @@
   top: 195px;
   left: 35%;
   position: fixed;
-}
+}*/
 
-.popup__lugar-close {
+/*.popup__lugar-close {
   width: 40px;
   height: 40px;
   position: absolute;
@@ -24,31 +24,31 @@
   font-size: 24px;
   background: 0;
   cursor: pointer;
-}
+}*/
 
-.popup__lugar-close {
+/*.popup__lugar-close {
   opacity: 60%;
-}
+}*/
 
-.popup__lugar-title {
+/*.popup__lugar-title {
   font-family: "Inter";
   font-weight: 900;
   font-size: 24px;
   margin: 34px 64px 0 36px;
-}
+}*/
 
-.popup__lugar-fieldset {
+/*.popup__lugar-fieldset {
   max-width: 430px;
   border: none;
-}
+}*/
 
-.popup__lugar-label {
+/*.popup__lugar-label {
   width: 358px;
   height: 28px;
   border-width: 1px;
-}
+}*/
 
-.popup__lugar-input {
+/*.popup__lugar-input {
   width: 358px;
   height: 28px;
   border-width: 1px;
@@ -60,9 +60,9 @@
   border-top: none;
   border-left: none;
   border-right: none;
-}
+}*/
 
-.popup__lugar-button {
+/*.popup__lugar-button {
   width: 358px;
   height: 50px;
   border-radius: 2px;
@@ -75,63 +75,62 @@
   margin: 48px auto 0 24px;
   cursor: pointer;
   background-color: black;
-}
-
-.popup__lugar-button:hover {
+}*/
+/*.popup__lugar-button:hover {
   opacity: 80%;
-}
+}*/
 
-.popup__add_open {
+/*.popup__add_open {
   display: flex;
   background-color: rgba(0, 0, 0, 0, 5);
-}
+}*/
 
 @media screen and (max-width: 1024px) {
-  .popup__lugar-form {
+  /*.popup__lugar-form {
     left: 290px;
-  }
+  }*/
 }
 
 @media screen and (max-width: 544px) {
-  .popup__lugar-close {
+  /*.popup__lugar-close {
     width: 26px;
     height: 26px;
     top: -40px;
     left: 264px;
-  }
+  }*/
 
-  .popup__lugar-form {
+  /*.popup__lugar-form {
     width: 282px;
     height: 322px;
     top: 123px;
     left: 20px;
-  }
+  }*/
 
-  .popup__lugar-title {
+  /*.popup__lugar-title {
     font-size: 18px;
     margin: 25px 22px 0 22px;
-  }
+  }*/
 
-  .popup__lugar-fieldset {
+  /*.popup__lugar-fieldset {
     max-width: 270px;
     padding: 0;
-  }
+  }*/
 
-  .popup__lugar-label {
+  /*.popup__lugar-label {
     width: 238px;
     height: 26px;
-  }
+  }*/
 
-  .popup__lugar-input {
+  /*.popup__lugar-input {
     width: 238px;
     height: 26px;
     margin: 30px auto 0 24px;
-  }
+  }*/
 
-  .popup__lugar-button {
+  /*.popup__lugar-button {
     width: 238px;
     height: 46px;
     margin: 46px auto 25px 22px;
     cursor: pointer;
-  }
+  }*/
 }

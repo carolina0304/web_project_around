@@ -24,7 +24,7 @@
   opacity: 60%;
 }
 
-.popup__container {
+.popup__form {
   width: 430px;
   height: 330px;
   background-color: white;
@@ -120,6 +120,11 @@
   opacity: 80%;
 }
 
+.popup__add_open {
+  display: flex;
+  background-color: rgba(0, 0, 0, 0, 5);
+}
+
 /* imagen grande */
 .popup__open {
   display: flex;
@@ -130,7 +135,7 @@
   .popup {
     max-width: 700px;
   }
-  .popup__container {
+  .popup__form {
     left: 290px;
   }
 }
@@ -147,7 +152,7 @@
     left: 264px;
   }
 
-  .popup__container {
+  .popup__form {
     width: 282px;
     height: 322px;
     top: 123px;
