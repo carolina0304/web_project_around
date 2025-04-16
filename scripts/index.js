@@ -56,15 +56,25 @@ const initialCards = [
     link: "https://practicum-content.s3.us-west-1.amazonaws.com/new-markets/WEB_sprint_5/ES/lago.jpg",
   },
 ];
+const handleKey = (evt) => {
+  console.log("holi2");
+  if (evt.key === "Escape") {
+    console.log("holi");
+  }
+};
 
 function openPopupProfile() {
+  console.log("holi3");
   handlePopupOpen();
   inputname.value = profilename.textContent;
   inputlastname.value = profilesubname.textContent;
+  document.addEventListener("keyup", handleKey);
 }
 /*abrir popup*/
 function handlePopupOpen() {
+  console.log("holi4");
   popup.classList.add("popup__open");
+  document.addEventListener("keyup", handleKey);
 }
 
 /*cerrar popup*/
