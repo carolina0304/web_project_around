@@ -64,15 +64,12 @@ const handleKey = (evt) => {
 };
 
 function openPopupProfile() {
-  console.log("holi3");
   handlePopupOpen();
   inputname.value = profilename.textContent;
   inputlastname.value = profilesubname.textContent;
-  document.addEventListener("keyup", handleKey);
 }
 /*abrir popup*/
 function handlePopupOpen() {
-  console.log("holi4");
   popup.classList.add("popup__open");
   document.addEventListener("keyup", handleKey);
 }

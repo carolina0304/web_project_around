@@ -115,7 +115,6 @@
   color: white;
   margin: 48px auto 0 24px;
   cursor: pointer;
-  background-color: black;
 }
 
 .popup__button:invalid {
