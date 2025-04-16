@@ -59,14 +59,9 @@ const initialCards = [
 
 /*ESCAPE*/
 const handleKey = (evt) => {
+  console.log("holi2");
   if (evt.key === "Escape") {
-    close();
-  } else if (evt.key === "Eenter") {
-    openPopupAddClose();
-    openPopupProfile();
-    openPopupAddOpen();
-    handlePopupOpen();
-    handlePopupClose();
+    console.log("holi");
   }
 };
 
@@ -89,7 +84,6 @@ function handlePopupClose() {
 /*Abrir popup Nuevo lugar*/
 function openPopupAddOpen() {
   popuplugar.classList.add("popup__add_open");
-  document.addEventListener("keyup", handleKey);
 }
 
 /*Cerrar popup Nuevo lugar*/
