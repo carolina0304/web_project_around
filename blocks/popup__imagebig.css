@@ -5,7 +5,6 @@
   display: none;
   justify-content: center;
   flex-direction: column;
-  position: relative;
 }
 
 .popup__imagebigcontainer {
