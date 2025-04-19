@@ -1,7 +1,3 @@
-/*import { resetValidation, validationConfig } from "./validate";
-
-resetValidation();*/
-
 /*Const Editar perfil*/
 const popup = document.querySelector(".popup");
 const button = document.querySelector(".profile__nameeditbutton");
