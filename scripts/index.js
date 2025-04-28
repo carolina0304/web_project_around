@@ -53,19 +53,6 @@ const initialCards = [
   },
 ];
 
-/*ESCAPE*/
-const handleKey = (evt) => {
-  if (evt.key === "Escape") {
-    close();
-  } else if (evt.key === "Eenter") {
-    openPopupAddClose();
-    openPopupProfile();
-    openPopupAddOpen();
-    handlePopupOpen();
-    handlePopupClose();
-  }
-};
-
 function openPopupProfile() {
   handlePopupOpen();
   inputname.value = profilename.textContent;
@@ -74,7 +61,6 @@ function openPopupProfile() {
 /*abrir popup*/
 function handlePopupOpen() {
   popup.classList.add("popup__open");
-  document.addEventListener("keyup", handleKey);
 }
 
 /*cerrar popup*/
@@ -85,7 +71,6 @@ function handlePopupClose() {
 /*Abrir popup Nuevo lugar*/
 function openPopupAddOpen() {
   popuplugar.classList.add("popup__add_open");
-  document.addEventListener("keyup", handleKey);
 }
 
 /*Cerrar popup Nuevo lugar*/
@@ -176,3 +161,23 @@ popupGuardar.addEventListener("click", (evt) => {
   openPopupAddClose();
 });
 imagebigclose.addEventListener("click", handlePopupImageClose);
+
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape") {
+    handlePopupClose();
+    openPopupAddClose();
+    handlePopupImageClose();
+  }
+});
+
+document.addEventListener("click", (event) => {
+  if (popup === event.target) {
+    handlePopupClose();
+  }
+  if (popuplugar === event.target) {
+    openPopupAddClose();
+  }
+  if (popupimagebig === event.target) {
+    handlePopupImageClose();
+  }
+});
