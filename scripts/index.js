@@ -96,7 +96,12 @@ function handleCardFormSubmit() {
 }
 
 initialCards.forEach(function (item) {
-  const card = new Card(item.link, item.name, "#template");
+  const card = new Card(
+    item.link,
+    item.name,
+    "#template",
+    handlePopupImageOpen
+  );
   element.append(card.createCard());
 });
 
