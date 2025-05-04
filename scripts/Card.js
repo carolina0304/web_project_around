@@ -1,9 +1,16 @@
 class Card {
-  constructor(image, description, cardSelector, handlePopupImageOpen) {
+  constructor(
+    image,
+    description,
+    cardSelector,
+    handlePopupImageOpen,
+    handleCardFormSubmit
+  ) {
     this._image = image;
     this._description = description;
     this._cardSelector = cardSelector;
     this._handlePopupImageOpen = handlePopupImageOpen;
+    this._handleCardFormSubmit = handleCardFormSubmit;
     console.log(this._image);
   }
 
@@ -42,6 +49,12 @@ class Card {
 
     this._cardImage.addEventListener("click", () => {
       this._handlePopupImageOpen(this._description, this._image);
+    });
+
+    this._cardImage.addEventListener("click", (evt) => {
+      evt.preventDefault();
+      this._handleCardFormSubmit();
+      openPopupAddClose();
     });
   }
 }

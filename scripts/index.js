@@ -1,4 +1,17 @@
 import Card from "./Card.js";
+/*import FormValidator from "./FormValidator.js";
+
+const f1 = new FormValidator("#popup__formedit");
+f1.enableValidation();
+
+const f2 = new FormValidator("#popup__lugar-form");
+f2.enableValidation();
+
+/*formElements.forEach((formElement) => {
+  const formValidator = new FormValidator(validationConfig, formElement);
+  formValidator.enableValidation();
+  formValidator.push(formValidator);
+});
 
 /*Const Editar perfil*/
 const popup = document.querySelector(".popup");
@@ -100,7 +113,8 @@ initialCards.forEach(function (item) {
     item.link,
     item.name,
     "#template",
-    handlePopupImageOpen
+    handlePopupImageOpen,
+    handleCardFormSubmit
   );
   element.append(card.createCard());
 });
