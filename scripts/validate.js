@@ -1,3 +1,4 @@
+/*Funcion de mostrar el error
 const showInputError = (formElement, inputElement, errorMessage) => {
   const errorElement = formElement.querySelector(`.${inputElement.id}-error`);
   inputElement.classList.add("popup__input_type_error");
@@ -8,6 +9,7 @@ const showInputError = (formElement, inputElement, errorMessage) => {
   errorElement.classList.add("popup__input-error");
 };
 
+//Funcion que esconde el error
 const hideInputError = (formElement, inputElement) => {
   const errorElement = formElement.querySelector(`.${inputElement.id}-error`);
   inputElement.classList.remove("popup__input_type_error");
@@ -15,6 +17,7 @@ const hideInputError = (formElement, inputElement) => {
   errorElement.textContent = "";
 };
 
+//Funcion para la validacion de input
 const checkInputValidity = (formElement, inputElement) => {
   if (!inputElement.validity.valid) {
     showInputError(formElement, inputElement, inputElement.validationMessage);
@@ -39,11 +42,12 @@ const toggleButtonState = (inputList, buttonElement) => {
   }
 };
 
+//Todos los inputs, establece lo eventos input y submit
 const setEventListeners = (formElement) => {
   const inputList = Array.from(formElement.querySelectorAll(".popup__input"));
   const buttonElement = formElement.querySelector(".popup__button");
   toggleButtonState(inputList, buttonElement);
-
+  //Itera sobre los elementos
   inputList.forEach((inputElement) => {
     inputElement.addEventListener("input", function () {
       checkInputValidity(formElement, inputElement);
@@ -52,6 +56,7 @@ const setEventListeners = (formElement) => {
   });
 };
 
+//Habilita la validacion
 const enableValidation = () => {
   const formList = Array.from(document.querySelectorAll(".popup__form"));
   formList.forEach((formElement) => {
@@ -77,4 +82,4 @@ const resetValidation = () => {
     formElement.reset();
     enableValidation();
   });
-};
+};*/

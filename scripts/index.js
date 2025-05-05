@@ -1,18 +1,17 @@
 import Card from "./Card.js";
-/*import FormValidator from "./FormValidator.js";
+import FormValidator from "./FormValidator.js";
 
-const f1 = new FormValidator("#popup__formedit");
-f1.enableValidation();
+const config = {
+  errorClass: "popup__error-active",
+  inputErrorClass: "popup__input-error",
+};
 
-const f2 = new FormValidator("#popup__lugar-form");
-f2.enableValidation();
+const allForms = document.querySelectorAll("popup__form");
 
-/*formElements.forEach((formElement) => {
-  const formValidator = new FormValidator(validationConfig, formElement);
-  formValidator.enableValidation();
-  formValidator.push(formValidator);
+allForms.forEach((form) => {
+  const validator = new FormValidator(config, form);
+  validator.enableValidation();
 });
-
 /*Const Editar perfil*/
 const popup = document.querySelector(".popup");
 const button = document.querySelector(".profile__nameeditbutton");
