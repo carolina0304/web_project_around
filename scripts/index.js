@@ -1,6 +1,6 @@
 import Card from "./Card.js";
 
-import FormValidator from "./FormValidator.js";
+/*import FormValidator from "./FormValidator.js";
 
 const config = {
   errorClass: "popup__error-active",
@@ -12,7 +12,7 @@ const allForms = document.querySelectorAll("popup__form");
 allForms.forEach((form) => {
   const validator = new FormValidator(config, form);
   validator.enableValidation();
-});
+});*/
 
 /*import {
   handlePopupOpen,
@@ -112,12 +112,18 @@ function addCards() {
   });
 }
 
-function handleCardFormSubmit() {
+const handleCardFormSubmit = () => {
   const card = { link: inputenlace.value, name: inputtitle.value };
-  const cardElement = createCard(card);
+  const cardElement = new Card(
+    card.link,
+    card.name,
+    "#template",
+    handlePopupImageOpen,
+    handleCardFormSubmit
+  );
   const cards = document.querySelector(".element");
-  cards.prepend(cardElement);
-}
+  cards.prepend(cardElement.createCard());
+};
 
 initialCards.forEach(function (item) {
   const card = new Card(

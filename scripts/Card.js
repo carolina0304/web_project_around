@@ -6,12 +6,12 @@ class Card {
     handlePopupImageOpen,
     handleCardFormSubmit
   ) {
+    console.log(image);
     this._image = image;
     this._description = description;
     this._cardSelector = cardSelector;
     this._handlePopupImageOpen = handlePopupImageOpen;
     this._handleCardFormSubmit = handleCardFormSubmit;
-    console.log(this._image);
   }
 
   _getTemplate() {
