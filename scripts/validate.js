@@ -1,4 +1,4 @@
-//Funcion de mostrar el error
+/*//Funcion de mostrar el error
 const showInputError = (formElement, inputElement, errorMessage) => {
   const errorElement = formElement.querySelector(`.${inputElement.id}-error`);
   inputElement.classList.add("popup__input_type_error");
@@ -56,7 +56,6 @@ const setEventListeners = (formElement) => {
   });
 };
 
-//Habilita la validacion
 const enableValidation = () => {
   const formList = Array.from(document.querySelectorAll(".popup__form"));
   formList.forEach((formElement) => {
@@ -82,4 +81,4 @@ const resetValidation = () => {
     formElement.reset();
     enableValidation();
   });
-};
+};*/

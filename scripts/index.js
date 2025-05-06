@@ -1,9 +1,13 @@
 import Card from "./Card.js";
 
-/*import FormValidator from "./FormValidator.js";
+import FormValidator from "./FormValidator.js";
 
 const config = {
-  errorClass: "popup__error-active",
+  formSelector: "popup__form",
+  inputSelector: "popup__input",
+  submitButtonSelector: "popup__button",
+  inactiveButtonClass: "popup__button_disabled",
+  errorClass: "popup__button_disabled",
   inputErrorClass: "popup__input-error",
 };
 
@@ -12,7 +16,7 @@ const allForms = document.querySelectorAll("popup__form");
 allForms.forEach((form) => {
   const validator = new FormValidator(config, form);
   validator.enableValidation();
-});*/
+});
 
 /*import {
   handlePopupOpen,
@@ -104,14 +108,15 @@ function openPopupAddClose() {
   popuplugar.classList.remove("popup__add_open");
 }
 
-//Crear las cartas
+/*Crear las cartas
 function addCards() {
   initialCards.forEach((item) => {
     const card = new Card(item.name, item.link, "#template");
     element.append(card.createCard);
   });
-}
+}*/
 
+//crea la carta de nuevo lugar
 const handleCardFormSubmit = () => {
   const card = { link: inputenlace.value, name: inputtitle.value };
   const cardElement = new Card(
@@ -125,6 +130,7 @@ const handleCardFormSubmit = () => {
   cards.prepend(cardElement.createCard());
 };
 
+//Inicia las cartas posicionadas
 initialCards.forEach(function (item) {
   const card = new Card(
     item.link,
