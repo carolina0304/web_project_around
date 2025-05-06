@@ -1,5 +1,6 @@
 import Card from "./Card.js";
-import FormValidator from "./FormValidator.js";
+
+/*import FormValidator from "./FormValidator.js";
 
 const config = {
   errorClass: "popup__error-active",
@@ -11,7 +12,17 @@ const allForms = document.querySelectorAll("popup__form");
 allForms.forEach((form) => {
   const validator = new FormValidator(config, form);
   validator.enableValidation();
-});
+});*/
+
+/*import {
+  handlePopupOpen,
+  handlePopupClose,
+  openPopupAddOpen,
+  openPopupAddClose,
+  handlePopupImageOpen,
+  handlePopupImageClose,
+} from "./Utils.js";*/
+
 /*Const Editar perfil*/
 const popup = document.querySelector(".popup");
 const button = document.querySelector(".profile__nameeditbutton");
@@ -92,13 +103,13 @@ function openPopupAddClose() {
   popuplugar.classList.remove("popup__add_open");
 }
 
-/*Crear las cartas
+//Crear las cartas
 function addCards() {
   initialCards.forEach((item) => {
     const card = new Card(item.name, item.link, "#template");
     element.append(card.createCard);
   });
-}*/
+}
 
 function handleCardFormSubmit() {
   const card = { link: inputenlace.value, name: inputtitle.value };
