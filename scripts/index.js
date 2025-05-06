@@ -1,6 +1,6 @@
 import Card from "./Card.js";
 
-/*import FormValidator from "./FormValidator.js";
+import FormValidator from "./FormValidator.js";
 
 const config = {
   errorClass: "popup__error-active",
@@ -12,7 +12,7 @@ const allForms = document.querySelectorAll("popup__form");
 allForms.forEach((form) => {
   const validator = new FormValidator(config, form);
   validator.enableValidation();
-});*/
+});
 
 /*import {
   handlePopupOpen,
@@ -78,11 +78,12 @@ const initialCards = [
   },
 ];
 
-function openPopupProfile() {
+/*function openPopupProfile() {
   handlePopupOpen();
   inputname.value = profilename.textContent;
   inputlastname.value = profilesubname.textContent;
-}
+}*/
+
 /*abrir popup*/
 function handlePopupOpen() {
   popup.classList.add("popup__open");
