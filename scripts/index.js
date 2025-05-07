@@ -47,8 +47,8 @@ const popupGuardar = document.querySelector("#popup_guardar");
 const closeplace = document.querySelector("#popupclose_lugar");
 
 /*Const imagen grande*/
-const popupimagebig = document.querySelector(".popup__imagebig");
-const imagebigclose = document.querySelector(".popup__imagebig-buttonclose");
+const popupimagebig = document.querySelector(".popup__image-big");
+const imagebigclose = document.querySelector(".popup__image-big-buttonclose");
 
 const buttonadd = document.querySelector(".profile__infoaddbutton");
 
@@ -150,8 +150,8 @@ const handleProfileFormSubmit = (evt) => {
 };
 
 function handlePopupImageOpen(name, link) {
-  const popupImg = popupimagebig.querySelector(".popup__imagebig-enlace");
-  const popupText = popupimagebig.querySelector(".popup__imagebig-text");
+  const popupImg = popupimagebig.querySelector(".popup__image-big-enlace");
+  const popupText = popupimagebig.querySelector(".popup__image-big-text");
   popupImg.src = link;
   popupImg.alt = name;
   popupText.textContent = name;

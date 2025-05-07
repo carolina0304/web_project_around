@@ -4,8 +4,7 @@ class Card {
     description,
     cardSelector,
     handlePopupImageOpen,
-    handleCardFormSubmit,
-    openPopupAddClose
+    handleCardFormSubmit
   ) {
     console.log(image);
     this._image = image;
@@ -13,7 +12,6 @@ class Card {
     this._cardSelector = cardSelector;
     this._handlePopupImageOpen = handlePopupImageOpen;
     this._handleCardFormSubmit = handleCardFormSubmit;
-    this._openPopupAddClose = openPopupAddClose;
   }
 
   _getTemplate() {
@@ -56,7 +54,7 @@ class Card {
     this._cardImage.addEventListener("click", (evt) => {
       evt.preventDefault();
       this._handleCardFormSubmit();
-      this._openPopupAddClose();
+      openPopupAddClose();
     });
   }
 }
