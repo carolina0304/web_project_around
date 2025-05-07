@@ -3,20 +3,23 @@ import Card from "./Card.js";
 import FormValidator from "./FormValidator.js";
 
 const config = {
-  formSelector: "popup__form",
-  inputSelector: "popup__input",
-  submitButtonSelector: "popup__button",
+  formSelector: ".popup__form",
+  inputSelector: ".popup__input",
+  submitButtonSelector: ".popup__button",
   inactiveButtonClass: "popup__button_disabled",
   errorClass: "popup__button_disabled",
   inputErrorClass: "popup__input-error",
 };
 
-const allForms = document.querySelectorAll("popup__form");
+const cardForm = document.querySelector("#popup__formedit");
 
-allForms.forEach((form) => {
-  const validator = new FormValidator(config, form);
-  validator.enableValidation();
-});
+const ProfileForm = document.querySelector("#popup__lugar-form");
+
+const cardFormValidator = new FormValidator(config, cardForm);
+cardFormValidator.enableValidation();
+
+const ProfileFormValidator = new FormValidator(config, ProfileForm);
+ProfileFormValidator.enableValidation();
 
 /*import {
   handlePopupOpen,
