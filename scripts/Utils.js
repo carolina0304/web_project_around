@@ -1,4 +1,8 @@
 /*abrir popup*/
+
+export const popup = document.querySelector(".popup");
+export const button = document.querySelector(".profile__nameeditbutton");
+export const popupclose = document.querySelector(".popup__close");
 export function handlePopupOpen() {
   popup.classList.add("popup__open");
 }
@@ -8,6 +12,9 @@ export function handlePopupClose() {
   popup.classList.remove("popup__open");
 }
 
+export const popupGuardar = document.querySelector("#popup_guardar");
+export const closeplace = document.querySelector("#popupclose_lugar");
+export const buttonadd = document.querySelector(".profile__infoaddbutton");
 /*Abrir popup Nuevo lugar*/
 export function openPopupAddOpen() {
   popuplugar.classList.add("popup__add_open");
