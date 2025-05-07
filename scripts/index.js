@@ -19,12 +19,12 @@ const ProfileForm = document.querySelector("#popup__lugar-form");
 const ProfileFormValidator = new FormValidator(config, ProfileForm);
 ProfileFormValidator.enableValidation();
 
-/*import {
+import {
   handlePopupOpen,
   handlePopupClose,
   openPopupAddOpen,
   openPopupAddClose,
-} from "./Utils.js";*/
+} from "./Utils.js";
 
 /*Const Editar perfil*/
 const popup = document.querySelector(".popup");
@@ -41,8 +41,8 @@ const popupButton = document.querySelector("#popup_guardaredit");
 const popuplugar = document.querySelector("#popuplugar");
 /** */
 //const popupformadd = document.querySelector(".popup__lugar-form");
-const inputtitle = document.querySelector("#name_titulo");
-const inputenlace = document.querySelector("#subname_enlace");
+const inputtitle = document.querySelector("#name-titulo");
+const inputenlace = document.querySelector("#subname-enlace");
 const popupGuardar = document.querySelector("#popup_guardar");
 const closeplace = document.querySelector("#popupclose_lugar");
 
@@ -87,7 +87,7 @@ function openPopupProfile() {
   inputlastname.value = profilesubname.textContent;
 }
 
-//abrir popup//
+/*//abrir popup//
 function handlePopupOpen() {
   popup.classList.add("popup__open");
 }
@@ -107,7 +107,7 @@ function openPopupAddClose() {
   popuplugar.classList.remove("popup__add_open");
 }
 
-/*//Crear las cartas
+//Crear las cartas
 function addCards() {
   initialCards.forEach((item) => {
     const card = new Card(item.name, item.link, "#template");
