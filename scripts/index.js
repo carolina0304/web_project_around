@@ -81,11 +81,11 @@ const initialCards = [
   },
 ];
 
-function openPopupProfile() {
+/*function openPopupProfile() {
   handlePopupOpen();
   inputname.value = profilename.textContent;
   inputlastname.value = profilesubname.textContent;
-}
+}*/
 
 /*//abrir popup//
 function handlePopupOpen() {
