@@ -50,12 +50,6 @@ class Card {
     this._cardImage.addEventListener("click", () => {
       this._handlePopupImageOpen(this._description, this._image);
     });
-
-    this._cardImage.addEventListener("click", (evt) => {
-      evt.preventDefault();
-      this._handleCardFormSubmit();
-      openPopupAddClose();
-    });
   }
 }
 export default Card;
