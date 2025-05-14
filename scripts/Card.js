@@ -14,6 +14,8 @@ class Card {
     this._handleCardFormSubmit = handleCardFormSubmit;
   }
 
+  //const x = new Card({image, description, cardselector, handle})
+
   _getTemplate() {
     const cardElement = document
       .querySelector(this._cardSelector)

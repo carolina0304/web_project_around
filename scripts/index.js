@@ -27,9 +27,9 @@ import {
 } from "./Utils.js";
 
 /*Const Editar perfil*/
-export const popup = document.querySelector(".popup");
-export const button = document.querySelector(".profile__nameeditbutton");
-export const popupclose = document.querySelector(".popup__close");
+const popup = document.querySelector(".popup");
+const button = document.querySelector(".profile__nameeditbutton");
+const popupclose = document.querySelector(".popup__close");
 const popupform = document.querySelector("#popup__formedit");
 const inputname = document.querySelector("#name");
 const inputlastname = document.querySelector("#subname");
@@ -43,8 +43,8 @@ const popuplugar = document.querySelector("#popuplugar");
 //const popupformadd = document.querySelector(".popup__lugar-form");
 const inputtitle = document.querySelector("#name-titulo");
 const inputenlace = document.querySelector("#subname-enlace");
-export const popupGuardar = document.querySelector("#popup_guardar");
-export const closeplace = document.querySelector("#popupclose_lugar");
+const popupGuardar = document.querySelector("#popup_guardar");
+const closeplace = document.querySelector("#popupclose_lugar");
 
 /*Const imagen grande*/
 const popupimagebig = document.querySelector(".popupimagebig");
