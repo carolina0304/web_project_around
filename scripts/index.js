@@ -52,7 +52,6 @@ const imagebigclose = document.querySelector(".popupimagebig__buttonclose");
 
 export const buttonadd = document.querySelector(".profile__infoaddbutton");
 
-const element = document.querySelector(".element");
 const template = document.querySelector("#template");
 const initialCards = [
   {
@@ -115,6 +114,7 @@ function addCards() {
   });
 }*/
 
+const element = document.querySelector(".element");
 //crea la carta de nuevo lugar
 const handleCardFormSubmit = () => {
   const card = { link: inputenlace.value, name: inputtitle.value };
