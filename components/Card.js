@@ -1,20 +1,11 @@
 class Card {
-  constructor(
-    image,
-    description,
-    cardSelector,
-    handlePopupImageOpen,
-    handleCardFormSubmit
-  ) {
+  constructor(image, description, cardSelector, handlePopupImageOpen) {
     console.log(image);
     this._image = image;
     this._description = description;
     this._cardSelector = cardSelector;
     this._handlePopupImageOpen = handlePopupImageOpen;
-    this._handleCardFormSubmit = handleCardFormSubmit;
   }
-
-  //const x = new Card({image, description, cardselector, handle})
 
   _getTemplate() {
     const cardElement = document

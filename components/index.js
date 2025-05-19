@@ -2,6 +2,8 @@ import Card from "./Card.js";
 
 import FormValidator from "./FormValidator.js";
 
+import Section from "./Section.js";
+
 const config = {
   formSelector: ".popup__form",
   inputSelector: ".popup__input",
@@ -140,6 +142,34 @@ initialCards.forEach(function (item) {
   );
   element.append(card.createCard());
 });
+
+/*llamar a Section instanciar una clase
+const cardsList = new Section(
+  {
+    item: initialCards,
+    renderer: (item) => {
+      const card = new Card(item, "#template", handlePopupImageOpen);
+      const cardElement = card.createCard();
+      cardsList.addItem(cardElement);
+    },
+  },
+  elementCard
+);
+cardsList.renderer();
+
+/*const formCardsAdd = (titleValue, linkValue, cardSelector) => {
+  const sectionInstance = new Section(
+    {
+      items: [],
+      renderer: (data) => {
+        const formCard = new formCard(cardSelector, handlePopupImageOpen);
+        formCard.handleCreateCard(data.link, data.title);
+        return formCard.createCard();
+      },
+    },
+    elementCard
+  );
+};
 
 /*popup editar */
 const handleProfileFormSubmit = (evt) => {
