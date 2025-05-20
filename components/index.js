@@ -143,19 +143,21 @@ initialCards.forEach(function (item) {
   element.append(card.createCard());
 });
 
-/*llamar a Section instanciar una clase
+//llamar a Section instanciar una clase
 const cardsList = new Section(
   {
-    item: initialCards,
+    items: [],
     renderer: (item) => {
-      const card = new Card(item, "#template", handlePopupImageOpen);
-      const cardElement = card.createCard();
-      cardsList.addItem(cardElement);
+      const card = new Card(item, "#template", (link, name) => {
+        popupimage.open({ src: link, alt: name, caption: name });
+        popupimage.setEventListeners();
+      });
+      return card.addCard(item);
     },
   },
-  elementCard
+  ".element__card"
 );
-cardsList.renderer();
+cardsList.renderItem();
 
 /*const formCardsAdd = (titleValue, linkValue, cardSelector) => {
   const sectionInstance = new Section(

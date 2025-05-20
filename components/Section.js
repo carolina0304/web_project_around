@@ -2,14 +2,15 @@
 // otras clases de index.js
 //para renderizar los elementos de la pagina
 export default class Section {
-  constructor({ item, renderer }, sectionSelector) {
-    this._rendererItems = item;
+  constructor({ items, renderer }, sectionSelector) {
+    this._items = items;
     this._renderer = renderer;
     this._container = document.querySelector(sectionSelector);
   }
-  renderer() {
-    this._rendererItems.forEach((item) => {
-      this._renderer(item);
+  renderItem() {
+    this._items.forEach((item) => {
+      const elemento = this._renderer(item);
+      this._addItem(elemento);
     });
   }
   addItem(elemento) {
