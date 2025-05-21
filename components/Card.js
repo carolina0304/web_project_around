@@ -1,8 +1,7 @@
 class Card {
-  constructor(image, description, cardSelector, handlePopupImageOpen) {
-    console.log(image);
-    this._image = image;
-    this._description = description;
+  constructor(cardSelector, { name, link }, handlePopupImageOpen) {
+    this._image = link;
+    this._description = name;
     this._cardSelector = cardSelector;
     this._handlePopupImageOpen = handlePopupImageOpen;
   }

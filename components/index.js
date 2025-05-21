@@ -131,7 +131,7 @@ const handleCardFormSubmit = () => {
   cards.prepend(cardElement.createCard());
 };
 
-//Inicia las cartas posicionadas
+/*Inicia las cartas posicionadas
 initialCards.forEach(function (item) {
   const card = new Card(
     item.link,
@@ -141,21 +141,26 @@ initialCards.forEach(function (item) {
     handleCardFormSubmit
   );
   element.append(card.createCard());
-});
+});*/
 
 // CLASE SECTION
-const container = document.querySelector(".element__card");
+const container = document.querySelector(".element");
 
-const createCard = (data) => {
+/*const createCard = (data) => {
   return new Card("#template", data).createCard();
-};
+};*/
 
-const cardsList = new Section(".element__card", {
-  items: initialCards,
-  renderer: (data) => {
-    cardsList.addItem(new Card("#template", data).createCard());
+const cardsList = new Section(
+  {
+    items: initialCards,
+    renderer: (data) => {
+      cardsList.addItem(
+        new Card("#template", data, handlePopupImageOpen).createCard()
+      );
+    },
   },
-});
+  container
+);
 
 cardsList.renderItem();
 
