@@ -143,7 +143,23 @@ initialCards.forEach(function (item) {
   element.append(card.createCard());
 });
 
-//llamar a Section instanciar una clase
+// CLASE SECTION
+const container = document.querySelector(".element__card");
+
+const createCard = (data) => {
+  return new Card("#template", data).createCard();
+};
+
+const cardsList = new Section(".element__card", {
+  items: initialCards,
+  renderer: (data) => {
+    cardsList.addItem(new Card("#template", data).createCard());
+  },
+});
+
+cardsList.renderItem();
+
+/*llamar a Section instanciar una clase INTENTO 1
 const cardsList = new Section(
   {
     items: [],
