@@ -120,13 +120,7 @@ const element = document.querySelector(".element");
 //crea la carta de nuevo lugar
 const handleCardFormSubmit = () => {
   const card = { link: inputenlace.value, name: inputtitle.value };
-  const cardElement = new Card(
-    card.link,
-    card.name,
-    "#template",
-    handlePopupImageOpen,
-    handleCardFormSubmit
-  );
+  const cardElement = new Card("#template", card, handlePopupImageOpen);
   const cards = document.querySelector(".element");
   cards.prepend(cardElement.createCard());
 };
@@ -146,10 +140,6 @@ initialCards.forEach(function (item) {
 // CLASE SECTION
 const container = document.querySelector(".element");
 
-/*const createCard = (data) => {
-  return new Card("#template", data).createCard();
-};*/
-
 const cardsList = new Section(
   {
     items: initialCards,
@@ -163,36 +153,6 @@ const cardsList = new Section(
 );
 
 cardsList.renderItem();
-
-/*llamar a Section instanciar una clase INTENTO 1
-const cardsList = new Section(
-  {
-    items: [],
-    renderer: (item) => {
-      const card = new Card(item, "#template", (link, name) => {
-        popupimage.open({ src: link, alt: name, caption: name });
-        popupimage.setEventListeners();
-      });
-      return card.addCard(item);
-    },
-  },
-  ".element__card"
-);
-cardsList.renderItem();
-
-/*const formCardsAdd = (titleValue, linkValue, cardSelector) => {
-  const sectionInstance = new Section(
-    {
-      items: [],
-      renderer: (data) => {
-        const formCard = new formCard(cardSelector, handlePopupImageOpen);
-        formCard.handleCreateCard(data.link, data.title);
-        return formCard.createCard();
-      },
-    },
-    elementCard
-  );
-};
 
 /*popup editar */
 const handleProfileFormSubmit = (evt) => {
