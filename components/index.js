@@ -4,6 +4,11 @@ import FormValidator from "./FormValidator.js";
 
 import Section from "./Section.js";
 
+/*import Popup from "../components/popup.js";
+
+export const openPop = new Popup(popup);
+openPop.setEventListener();*/
+
 const config = {
   formSelector: ".popup__form",
   inputSelector: ".popup__input",
