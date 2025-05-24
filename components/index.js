@@ -4,6 +4,15 @@ import FormValidator from "./FormValidator.js";
 
 import Section from "./Section.js";
 
+/*import PopupWithImage from "./PopupWithImage.js";
+
+const popupWithImage = new PopupWithImage(".popupimagebig");
+popupWithImage.setEventListener();
+
+function handlePopupImageOpen(name, link) {
+  popupWithImage.open({ name, link });
+}*/
+
 /*import Popup from "../components/popup.js";
 
 export const openPop = new Popup(popup);
