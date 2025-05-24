@@ -1,8 +1,8 @@
-import Card from "./Card.js";
+import Card from "../components/Card.js";
 
-import FormValidator from "./FormValidator.js";
+import FormValidator from "../components/FormValidator.js";
 
-import Section from "./Section.js";
+import Section from "../components/Section.js";
 
 /*import PopupWithImage from "./PopupWithImage.js";
 
@@ -15,8 +15,8 @@ function handlePopupImageOpen(name, link) {
 
 /*import Popup from "../components/popup.js";
 
-export const openPop = new Popup(popup);
-openPop.setEventListener();*/
+const openPopupAddOpen = new Popup(popup);
+openPopupAddOpen.setEventListener();*/
 
 const config = {
   formSelector: ".popup__form",
@@ -40,7 +40,7 @@ import {
   handlePopupClose,
   openPopupAddOpen,
   openPopupAddClose,
-} from "./Utils.js";
+} from "../components/Utils.js";
 
 /*Const Editar perfil*/
 const popup = document.querySelector(".popup");
