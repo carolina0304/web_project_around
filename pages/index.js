@@ -7,15 +7,18 @@ import Section from "../components/Section.js";
 
 import PopupWithImage from "../components/PopupWithImage.js";
 
-const popupWithImage = new PopupWithImage(".popupimagebig");
+const popupWithImage = new PopupWithImage(".popup");
 popupWithImage.setEventListeners();
 
 function handlePopupImageOpen(name, link) {
   popupWithImage.open({ name, link });
 }
 
+/*const popupImg = popupimagebig.querySelector(".popupimagebig__enlace");
+const popupText = popupimagebig.querySelector(".popupimagebig__text");*/
+
 const openPopupAddOpen = new PopupWithForm(".popup__form");
-openPopupAddOpen.setEventListener();
+openPopupAddOpen.setEventListeners();
 
 const config = {
   formSelector: ".popup__form",
@@ -65,7 +68,7 @@ const closeplace = document.querySelector("#popupclose_lugar");
 const popupimagebig = document.querySelector(".popupimagebig");
 const imagebigclose = document.querySelector(".popupimagebig__buttonclose");
 
-export const buttonadd = document.querySelector(".profile__infoaddbutton");
+const buttonadd = document.querySelector(".profile__infoaddbutton");
 
 const template = document.querySelector("#template");
 const initialCards = [
