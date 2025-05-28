@@ -1,22 +1,21 @@
 import Card from "../components/Card.js";
 
 import FormValidator from "../components/FormValidator.js";
+import PopupWithForm from "../components/PopupWithForm.js";
 
 import Section from "../components/Section.js";
 
-/*import PopupWithImage from "./PopupWithImage.js";
+import PopupWithImage from "../components/PopupWithImage.js";
 
 const popupWithImage = new PopupWithImage(".popupimagebig");
-popupWithImage.setEventListener();
+popupWithImage.setEventListeners();
 
 function handlePopupImageOpen(name, link) {
   popupWithImage.open({ name, link });
-}*/
+}
 
-/*import Popup from "../components/popup.js";
-
-const openPopupAddOpen = new Popup(popup);
-openPopupAddOpen.setEventListener();*/
+const openPopupAddOpen = new PopupWithForm(".popup__form");
+openPopupAddOpen.setEventListener();
 
 const config = {
   formSelector: ".popup__form",
@@ -35,12 +34,12 @@ const ProfileForm = document.querySelector("#popup__lugar-form");
 const ProfileFormValidator = new FormValidator(config, ProfileForm);
 ProfileFormValidator.enableValidation();
 
-import {
+/*import {
   handlePopupOpen,
   handlePopupClose,
   openPopupAddOpen,
   openPopupAddClose,
-} from "../components/Utils.js";
+} from "../components/Utils.js";*/
 
 /*Const Editar perfil*/
 const popup = document.querySelector(".popup");
@@ -176,18 +175,18 @@ const handleProfileFormSubmit = (evt) => {
   popup.classList.remove("popup__open");
 };
 
-function handlePopupImageOpen(name, link) {
+/*function handlePopupImageOpen(name, link) {
   const popupImg = popupimagebig.querySelector(".popupimagebig__enlace");
   const popupText = popupimagebig.querySelector(".popupimagebig__text");
   popupImg.src = link;
   popupImg.alt = name;
   popupText.textContent = name;
   popupimagebig.classList.add("popup__image_opened");
-}
+}*/
 
-const handlePopupImageClose = () => {
+/*const handlePopupImageClose = () => {
   popupimagebig.classList.remove("popup__image_opened");
-};
+};*/
 
 popupform.addEventListener("submit", handleProfileFormSubmit);
 
