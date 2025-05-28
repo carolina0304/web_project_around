@@ -7,6 +7,8 @@ import Section from "../components/Section.js";
 
 import PopupWithImage from "../components/PopupWithImage.js";
 
+import UserInfo from "../components/UserInfo.js";
+
 const popupWithImage = new PopupWithImage(".popup");
 popupWithImage.setEventListeners();
 
@@ -17,8 +19,41 @@ function handlePopupImageOpen(name, link) {
 /*const popupImg = popupimagebig.querySelector(".popupimagebig__enlace");
 const popupText = popupimagebig.querySelector(".popupimagebig__text");*/
 
-const openPopupAddOpen = new PopupWithForm(".popup__form");
-openPopupAddOpen.setEventListeners();
+const userInfo = new UserInfo({
+  nameSelector: ".profile__namenames",
+  jobSelector: ".profile__namesubname",
+});
+//Modificar el profile//
+const formEdit = new PopupWithForm("popup__form", (formData) => {
+  userInfo.setUserInfo({
+    name: formData.name,
+    job: formData.job,
+  });
+  formEdit.close();
+});
+
+formEdit.setEventListeners();
+
+button.addEventListener("click", () => {
+  inputname.value = userInfo.getUserInfo().name;
+  inputlastname.value = userInfo.getUserInfo().job;
+  formEdit.open();
+});
+
+//agregar url
+const FormAdd = new PopupWithForm("#popuplugar", (formData) => {
+  const newCard = createCard(formData.title, formData.url);
+  cardsList.renderItem(newCard);
+  FormAdd.close();
+});
+
+FormAdd.setEventListeners();
+
+buttonadd.addEventListener("click", () => {
+  inputtitle.value = "";
+  inputenlace.value = "";
+  FormAdd.open();
+});
 
 const config = {
   formSelector: ".popup__form",
