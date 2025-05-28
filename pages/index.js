@@ -24,7 +24,7 @@ const userInfo = new UserInfo({
   jobSelector: ".profile__namesubname",
 });
 //Modificar el profile//
-const formEdit = new PopupWithForm("popup__form", (formData) => {
+const formEdit = new PopupWithForm(".popup__form", (formData) => {
   userInfo.setUserInfo({
     name: formData.name,
     job: formData.job,
