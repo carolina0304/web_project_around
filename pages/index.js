@@ -211,13 +211,13 @@ const cardsList = new Section(
 
 cardsList.renderItem();
 
-/*popup editar 
+//popup editar
 const handleProfileFormSubmit = (evt) => {
   evt.preventDefault();
-  profilename.textContent = inputname.value;
-  profilesubname.textContent = inputlastname.value;
+  /*profilename.textContent = inputname.value;
+  profilesubname.textContent = inputlastname.value;*/
   popup.classList.remove("popup__open");
-};*/
+};
 
 /*function handlePopupImageOpen(name, link) {
   const popupImg = popupimagebig.querySelector(".popupimagebig__enlace");
