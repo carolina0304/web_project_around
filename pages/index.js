@@ -1,95 +1,3 @@
-import Card from "../components/Card.js";
-
-import FormValidator from "../components/FormValidator.js";
-import PopupWithForm from "../components/PopupWithForm.js";
-
-import Section from "../components/Section.js";
-
-import PopupWithImage from "../components/PopupWithImage.js";
-
-import UserInfo from "../components/UserInfo.js";
-
-const popupWithImage = new PopupWithImage(".popup");
-popupWithImage.setEventListeners();
-
-function handlePopupImageOpen(name, link) {
-  popupWithImage.open({ name, link });
-}
-
-/*const popupImg = popupimagebig.querySelector(".popupimagebig__enlace");
-const popupText = popupimagebig.querySelector(".popupimagebig__text");*/
-
-const userInfo = new UserInfo({
-  nameSelector: ".profile__namenames",
-  jobSelector: ".profile__namesubname",
-});
-//Modificar el profile//
-const formEdit = new PopupWithForm(".popup__form", (formData) => {
-  userInfo.setUserInfo({
-    name: formData.name,
-    job: formData.job,
-  });
-  formEdit.close();
-});
-
-formEdit.setEventListeners();
-
-button.addEventListener("click", () => {
-  inputname.value = userInfo.getUserInfo().name;
-  inputlastname.value = userInfo.getUserInfo().job;
-  formEdit.open();
-});
-
-//agregar url
-const FormAdd = new PopupWithForm("#popuplugar", (formData) => {
-  const newCard = createCard(formData.title, formData.url);
-  cardsList.renderItem(newCard);
-  FormAdd.close();
-});
-
-FormAdd.setEventListeners();
-
-buttonadd.addEventListener("click", () => {
-  inputtitle.value = "";
-  inputenlace.value = "";
-  FormAdd.open();
-});
-
-const config = {
-  formSelector: ".popup__form",
-  inputSelector: ".popup__input",
-  submitButtonSelector: ".popup__button",
-  inactiveButtonClass: "popup__button_disabled",
-  errorClass: "popup__button_disabled",
-  inputErrorClass: "popup__input-error",
-};
-
-const cardForm = document.querySelector("#popup__formedit");
-const cardFormValidator = new FormValidator(config, cardForm);
-cardFormValidator.enableValidation();
-
-const ProfileForm = document.querySelector("#popup__lugar-form");
-const ProfileFormValidator = new FormValidator(config, ProfileForm);
-ProfileFormValidator.enableValidation();
-
-/*import {
-  handlePopupOpen,
-  handlePopupClose,
-  openPopupAddOpen,
-  openPopupAddClose,
-} from "../components/Utils.js";*/
-
-/*Const Editar perfil*/
-const popup = document.querySelector(".popup");
-const button = document.querySelector(".profile__nameeditbutton");
-const popupclose = document.querySelector(".popup__close");
-const popupform = document.querySelector("#popup__formedit");
-const inputname = document.querySelector("#name");
-const inputlastname = document.querySelector("#subname");
-const profilename = document.querySelector(".profile__namenames");
-const profilesubname = document.querySelector(".profile__namesubname");
-const popupButton = document.querySelector("#popup_guardaredit");
-
 /*Const Nuevo lugar*/
 const popuplugar = document.querySelector("#popuplugar");
 /** */
@@ -103,9 +11,19 @@ const closeplace = document.querySelector("#popupclose_lugar");
 const popupimagebig = document.querySelector(".popupimagebig");
 const imagebigclose = document.querySelector(".popupimagebig__buttonclose");
 
-const buttonadd = document.querySelector(".profile__infoaddbutton");
-
 const template = document.querySelector("#template");
+
+/*Const Editar perfil*/
+const popup = document.querySelector(".popup");
+
+const popupclose = document.querySelector(".popup__close");
+const popupform = document.querySelector("#popup__formedit");
+const inputname = document.querySelector("#name");
+const inputlastname = document.querySelector("#subname");
+const profilename = document.querySelector(".profile__namenames");
+const profilesubname = document.querySelector(".profile__namesubname");
+const popupButton = document.querySelector("#popup_guardaredit");
+
 const initialCards = [
   {
     name: "Valle de Yosemite",
@@ -132,6 +50,94 @@ const initialCards = [
     link: "https://practicum-content.s3.us-west-1.amazonaws.com/new-markets/WEB_sprint_5/ES/lago.jpg",
   },
 ];
+
+import Card from "../components/Card.js";
+
+import FormValidator from "../components/FormValidator.js";
+import PopupWithForm from "../components/PopupWithForm.js";
+
+import Section from "../components/Section.js";
+
+import PopupWithImage from "../components/PopupWithImage.js";
+
+import UserInfo from "../components/UserInfo.js";
+
+import Popup from "../components/popup.js";
+
+const openPop = new Popup(".popup");
+openPop.setEventListeners();
+
+const popupWithImage = new PopupWithImage(".popup");
+popupWithImage.setEventListeners();
+
+function handlePopupImageOpen(name, link) {
+  popupWithImage.open({ name, link });
+}
+
+/*const popupImg = popupimagebig.querySelector(".popupimagebig__enlace");
+const popupText = popupimagebig.querySelector(".popupimagebig__text");*/
+
+const userInfo = new UserInfo({
+  nameSelector: ".profile__namenames",
+  jobSelector: ".profile__namesubname",
+});
+//Modificar el profile//
+const formEdit = new PopupWithForm(".popup", ".popup__form", (formData) => {
+  userInfo.setUserInfo({
+    name: formData.name,
+    job: formData.job,
+  });
+  formEdit.close();
+});
+
+formEdit.setEventListeners();
+
+const button = document.querySelector(".profile__nameeditbutton");
+button.addEventListener("click", () => {
+  inputname.value = userInfo.getUserInfo().name;
+  inputlastname.value = userInfo.getUserInfo().job;
+  formEdit.open();
+});
+
+//agregar url
+const FormAdd = new PopupWithForm("#popuplugar", ".popup__form", (formData) => {
+  const newCard = createCard(formData.title, formData.url);
+  cardsList.renderItem(newCard);
+  FormAdd.close();
+});
+
+FormAdd.setEventListeners();
+
+const buttonadd = document.querySelector(".profile__infoaddbutton");
+buttonadd.addEventListener("click", () => {
+  inputtitle.value = "";
+  inputenlace.value = "";
+  FormAdd.open();
+});
+
+const config = {
+  formSelector: ".popup__form",
+  inputSelector: ".popup__input",
+  submitButtonSelector: ".popup__button",
+  inactiveButtonClass: "popup__button_disabled",
+  errorClass: "popup__button_disabled",
+  inputErrorClass: "popup__input-error",
+};
+
+const cardForm = document.querySelector("#popup__formedit");
+const cardFormValidator = new FormValidator(config, cardForm);
+cardFormValidator.enableValidation();
+
+const ProfileForm = document.querySelector("#popup__lugar-form");
+const ProfileFormValidator = new FormValidator(config, ProfileForm);
+ProfileFormValidator.enableValidation();
+
+import {
+  handlePopupOpen,
+  handlePopupClose,
+  openPopupAddOpen,
+  openPopupAddClose,
+} from "../components/Utils.js";
 
 /*function openPopupProfile() {
   handlePopupOpen();
@@ -205,13 +211,13 @@ const cardsList = new Section(
 
 cardsList.renderItem();
 
-/*popup editar */
+/*popup editar 
 const handleProfileFormSubmit = (evt) => {
   evt.preventDefault();
   profilename.textContent = inputname.value;
   profilesubname.textContent = inputlastname.value;
   popup.classList.remove("popup__open");
-};
+};*/
 
 /*function handlePopupImageOpen(name, link) {
   const popupImg = popupimagebig.querySelector(".popupimagebig__enlace");
@@ -222,9 +228,9 @@ const handleProfileFormSubmit = (evt) => {
   popupimagebig.classList.add("popup__image_opened");
 }*/
 
-/*const handlePopupImageClose = () => {
+const handlePopupImageClose = () => {
   popupimagebig.classList.remove("popup__image_opened");
-};*/
+};
 
 popupform.addEventListener("submit", handleProfileFormSubmit);
 
