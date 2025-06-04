@@ -1,3 +1,4 @@
+//acomodar
 /*Const Nuevo lugar*/
 const popuplugar = document.querySelector("#popuplugar");
 /** */
