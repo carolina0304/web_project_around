@@ -67,12 +67,12 @@ import Popup from "../components/popup.js";
 const openPop = new Popup(".popup");
 openPop.setEventListeners();
 
-const popupWithImage = new PopupWithImage(".popup");
-popupWithImage.setEventListeners();
+const popupWithImage = new PopupWithImage("#popupimagebig");
+/*popupWithImage.setEventListeners();
 
 function handlePopupImageOpen(name, link) {
   popupWithImage.open({ name, link });
-}
+}*/
 
 /*const popupImg = popupimagebig.querySelector(".popupimagebig__enlace");
 const popupText = popupimagebig.querySelector(".popupimagebig__text");*/
@@ -177,7 +177,9 @@ const element = document.querySelector(".element");
 //crea la carta de nuevo lugar
 const handleCardFormSubmit = () => {
   const card = { link: inputenlace.value, name: inputtitle.value };
-  const cardElement = new Card("#template", card, handlePopupImageOpen);
+  const cardElement = new Card("#template", card, (name, link) => {
+    popupWithImage.open({ name, link });
+  });
   const cards = document.querySelector(".element");
   cards.prepend(cardElement.createCard());
 };
@@ -202,7 +204,9 @@ const cardsList = new Section(
     items: initialCards,
     renderer: (data) => {
       cardsList.addItem(
-        new Card("#template", data, handlePopupImageOpen).createCard()
+        new Card("#template", data, (name, link) => {
+          popupWithImage.open({ name, link });
+        }).createCard()
       );
     },
   },
@@ -245,7 +249,7 @@ popupGuardar.addEventListener("click", (evt) => {
   handleCardFormSubmit();
   openPopupAddClose();
 });
-imagebigclose.addEventListener("click", handlePopupImageClose);
+/*imagebigclose.addEventListener("click", handlePopupImageClose);*/
 
 document.addEventListener("keydown", (event) => {
   if (event.key === "Escape") {
