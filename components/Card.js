@@ -38,7 +38,7 @@ class Card {
 
   /*_handleCardClick() {
     this._element
-      .querySelector(".popupimagebig__enlace")
+      .querySelector(".popup__enlace")
       .addEventListener("click", () => {
         this._popupImage.open(this._image, this._description);
       });

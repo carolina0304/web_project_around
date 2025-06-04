@@ -8,8 +8,8 @@ const popupGuardar = document.querySelector("#popup_guardar");
 const closeplace = document.querySelector("#popupclose_lugar");
 
 /*Const imagen grande*/
-const popupimagebig = document.querySelector(".popupimagebig");
-const imagebigclose = document.querySelector(".popupimagebig__buttonclose");
+const popupimagebig = document.querySelector("#popupimagebig");
+const imagebigclose = document.querySelector("#popupclose_imagebig");
 
 const template = document.querySelector("#template");
 
@@ -62,20 +62,20 @@ import PopupWithImage from "../components/PopupWithImage.js";
 
 import UserInfo from "../components/UserInfo.js";
 
-import Popup from "../components/popup.js";
+/*import Popup from "../components/popup.js";*/
 
-const openPop = new Popup(".popup");
-openPop.setEventListeners();
+/*const openPop = new Popup(".popup");
+openPop.setEventListeners();*/
 
 const popupWithImage = new PopupWithImage("#popupimagebig");
-/*popupWithImage.setEventListeners();
+/*popupWithImage.setEventListeners();*/
 
-function handlePopupImageOpen(name, link) {
+/*function handlePopupImageOpen(name, link) {
   popupWithImage.open({ name, link });
 }*/
 
-/*const popupImg = popupimagebig.querySelector(".popupimagebig__enlace");
-const popupText = popupimagebig.querySelector(".popupimagebig__text");*/
+/*const popupImg = popupimagebig.querySelector(".popup__enlace");
+const popupText = popupimagebig.querySelector(".popup__text");*/
 
 const userInfo = new UserInfo({
   nameSelector: ".profile__namenames",
@@ -90,7 +90,7 @@ const formEdit = new PopupWithForm(".popup", ".popup__form", (formData) => {
   formEdit.close();
 });
 
-formEdit.setEventListeners();
+/*formEdit.setEventListeners();*/
 
 const button = document.querySelector(".profile__nameeditbutton");
 button.addEventListener("click", () => {
@@ -224,8 +224,8 @@ const handleProfileFormSubmit = (evt) => {
 };
 
 /*function handlePopupImageOpen(name, link) {
-  const popupImg = popupimagebig.querySelector(".popupimagebig__enlace");
-  const popupText = popupimagebig.querySelector(".popupimagebig__text");
+  const popupImg = popupimagebig.querySelector(".popup__enlace");
+  const popupText = popupimagebig.querySelector(".popup__text");
   popupImg.src = link;
   popupImg.alt = name;
   popupText.textContent = name;
@@ -249,7 +249,7 @@ popupGuardar.addEventListener("click", (evt) => {
   handleCardFormSubmit();
   openPopupAddClose();
 });
-/*imagebigclose.addEventListener("click", handlePopupImageClose);*/
+imagebigclose.addEventListener("click", handlePopupImageClose);
 
 document.addEventListener("keydown", (event) => {
   if (event.key === "Escape") {
