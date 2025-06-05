@@ -69,7 +69,7 @@ import UserInfo from "../components/UserInfo.js";
 openPop.setEventListeners();*/
 
 const popupWithImage = new PopupWithImage("#popupimagebig");
-/*popupWithImage.setEventListeners();*/
+popupWithImage.setEventListeners();
 
 /*function handlePopupImageOpen(name, link) {
   popupWithImage.open({ name, link });
@@ -91,7 +91,7 @@ const formEdit = new PopupWithForm(".popup", ".popup__form", (formData) => {
   formEdit.close();
 });
 
-/*formEdit.setEventListeners();*/
+formEdit.setEventListeners();
 
 const button = document.querySelector(".profile__nameeditbutton");
 button.addEventListener("click", () => {

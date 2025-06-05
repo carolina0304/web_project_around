@@ -76,24 +76,12 @@
             </div>
           </div>
         </template>
-        <!--Pop up Imagen grande-->
-        <div class="popup" id="popupimagebig">
-          <div class="popup__container">
-            <button id="popupclose_imagebig" type="button" class="popup__close">
-              x
-            </button>
-            <img class="popup__enlace" src="imagen-enlace" alt="" />
-            <div class="popup__text">
-              <p class="popup__text"></p>
-            </div>
-          </div>
-        </div>
       </main>
       <footer class="footer">
         <p class="footer__copyright">&copy; 2025 Around The U.S.</p>
       </footer>
       <!--Pop up Editar Perfil-->
-      <div class="popup" id="#popup">
+      <div class="popup" id="popup">
         <form action="#" class="popup__form" id="popup__formedit" novalidate>
           <button id="popupclose" type="button" class="popup__close">x</button>
           <h2 class="popup__title">Editar perfil</h2>
@@ -181,6 +169,22 @@
             </button>
           </fieldset>
         </form>
+      </div>
+      <!--Pop up Imagen grande-->
+      <div class="popup popup-image" id="popupimagebig">
+        <div class="popup__container">
+          <button
+            id="popupclose_imagebig"
+            type="button"
+            class="popup__close popup__close-imagebig"
+          >
+            x
+          </button>
+          <img class="popup__enlace" src="imagen-enlace" alt="" />
+          <div class="popup__text">
+            <p class="popup__text"></p>
+          </div>
+        </div>
       </div>
     </div>
     <script src="./pages/index.js" type="module"></script>
