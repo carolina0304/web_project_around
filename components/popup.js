@@ -25,9 +25,9 @@ export default class Popup {
     }
   }
 
-  handleClickOut(evt) {
+  /*handleClickOut(evt) {
     return evt.target.classList.contains("popup__open");
-  }
+  }*/
 
   setEventListeners() {
     this._closePopupButton.addEventListener("click", () => {
