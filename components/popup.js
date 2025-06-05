@@ -38,6 +38,7 @@ export default class Popup {
       if (event.target === this._popup) {
         this.close();
       }
+      console.log("click");
     });
   }
 }
