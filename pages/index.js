@@ -12,8 +12,6 @@ const closeplace = document.querySelector("#popupclose_lugar");
 const popupimagebig = document.querySelector("#popupimagebig");
 const imagebigclose = document.querySelector("#popupclose_imagebig");
 
-const template = document.querySelector("#template");
-
 /*Const Editar perfil*/
 const popup = document.querySelector(".popup");
 
@@ -21,9 +19,6 @@ const popupclose = document.querySelector(".popup__close");
 const popupform = document.querySelector("#popup__formedit");
 const inputname = document.querySelector("#name");
 const inputlastname = document.querySelector("#subname");
-const profilename = document.querySelector(".profile__namenames");
-const profilesubname = document.querySelector(".profile__namesubname");
-const popupButton = document.querySelector("#popup_guardaredit");
 
 const initialCards = [
   {
@@ -63,20 +58,8 @@ import PopupWithImage from "../components/PopupWithImage.js";
 
 import UserInfo from "../components/UserInfo.js";
 
-/*import Popup from "../components/popup.js";*/
-
-/*const openPop = new Popup(".popup");
-openPop.setEventListeners();*/
-
 const popupWithImage = new PopupWithImage("#popupimagebig");
 popupWithImage.setEventListeners();
-
-/*function handlePopupImageOpen(name, link) {
-  popupWithImage.open({ name, link });
-}*/
-
-/*const popupImg = popupimagebig.querySelector(".popup__enlace");
-const popupText = popupimagebig.querySelector(".popup__text");*/
 
 const userInfo = new UserInfo({
   nameSelector: ".profile__namenames",
@@ -140,40 +123,6 @@ import {
   openPopupAddClose,
 } from "../components/Utils.js";
 
-/*function openPopupProfile() {
-  handlePopupOpen();
-  inputname.value = profilename.textContent;
-  inputlastname.value = profilesubname.textContent;
-}*/
-
-/*//abrir popup//
-function handlePopupOpen() {
-  popup.classList.add("popup__open");
-}
-
-//cerrar popup//
-function handlePopupClose() {
-  popup.classList.remove("popup__open");
-}
-
-//Abrir popup Nuevo lugar//
-function openPopupAddOpen() {
-  popuplugar.classList.add("popup__add_open");
-}
-
-//Cerrar popup Nuevo lugar//
-function openPopupAddClose() {
-  popuplugar.classList.remove("popup__add_open");
-}
-
-//Crear las cartas
-function addCards() {
-  initialCards.forEach((item) => {
-    const card = new Card(item.name, item.link, "#template");
-    element.append(card.createCard);
-  });
-}*/
-
 const element = document.querySelector(".element");
 //crea la carta de nuevo lugar
 const handleCardFormSubmit = () => {
@@ -185,18 +134,6 @@ const handleCardFormSubmit = () => {
   cards.prepend(cardElement.createCard());
   FormAdd.close();
 };
-
-/*Inicia las cartas posicionadas
-initialCards.forEach(function (item) {
-  const card = new Card(
-    item.link,
-    item.name,
-    "#template",
-    handlePopupImageOpen,
-    handleCardFormSubmit
-  );
-  element.append(card.createCard());
-});*/
 
 // CLASE SECTION
 const container = document.querySelector(".element");
@@ -220,19 +157,8 @@ cardsList.renderItem();
 //popup editar
 const handleProfileFormSubmit = (evt) => {
   evt.preventDefault();
-  /*profilename.textContent = inputname.value;
-  profilesubname.textContent = inputlastname.value;*/
   popup.classList.remove("popup__open");
 };
-
-/*function handlePopupImageOpen(name, link) {
-  const popupImg = popupimagebig.querySelector(".popup__enlace");
-  const popupText = popupimagebig.querySelector(".popup__text");
-  popupImg.src = link;
-  popupImg.alt = name;
-  popupText.textContent = name;
-  popupimagebig.classList.add("popup__image_opened");
-}*/
 
 const handlePopupImageClose = () => {
   popupimagebig.classList.remove("popup__image_opened");

@@ -26,15 +26,13 @@ export default class Popup {
     }
   }
 
-  /*handleClickOut(evt) {
-    return evt.target.classList.contains("popup__open");
-  }*/
-
+  //Metodo para agregar los event listener para cerrar
   setEventListeners() {
+    //click de cerrar
     this._closePopupButton.addEventListener("click", () => {
       this.close();
     });
-
+    // cerrar popup en area sombreada
     this._popup.addEventListener("click", (event) => {
       if (event.target === this._popupContainer) {
         this.close();
