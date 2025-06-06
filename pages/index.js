@@ -183,6 +183,7 @@ const handleCardFormSubmit = () => {
   });
   const cards = document.querySelector(".element");
   cards.prepend(cardElement.createCard());
+  FormAdd.close();
 };
 
 /*Inicia las cartas posicionadas

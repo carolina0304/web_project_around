@@ -3,6 +3,7 @@ export default class Popup {
     this._popup = document.querySelector(popupSelector);
     this._closePopupButton = this._popup.querySelector(".popup__close");
     this._handleEscClose = this._handleEscClose.bind(this);
+    this._popupContainer = document.querySelector(".popup__container");
   }
 
   //Metodo para abrir el popup
@@ -35,7 +36,7 @@ export default class Popup {
     });
 
     this._popup.addEventListener("click", (event) => {
-      if (event.target === this._popup) {
+      if (event.target === this._popupContainer) {
         this.close();
       }
       console.log("click");
