@@ -58,6 +58,8 @@ import PopupWithImage from "../components/PopupWithImage.js";
 
 import UserInfo from "../components/UserInfo.js";
 
+import Api from "../components/Api.js";
+
 const popupWithImage = new PopupWithImage("#popupimagebig");
 popupWithImage.setEventListeners();
 
@@ -198,3 +200,29 @@ document.addEventListener("click", (event) => {
     handlePopupImageClose();
   }
 });
+
+//Hacer solicitud
+const api = new Api({
+  baseurl: "https://around-api.es.tripleten-services.com/v1/",
+  headers: {
+    "content-type": "application/json; charset=UTF-8",
+    authorization: "ac2a5b08-54d4-4f90-9a16-02090561c004",
+  },
+});
+
+/*fetch("https://around-api.es.tripleten-services.com/v1/cards/", {
+  method: "GET",
+});
+
+// a continuación hay una solicitud GET, aunque no lo indiquemos explícitamente en el método fetch()
+
+fetch("https://around-api.es.tripleten-services.com/v1/users/me")
+  .then((res) => {
+    return res.json();
+  })
+  .then((data) => {
+    console.log(data.user.name); // si se ejecuta este bloque then(), los datos son un objeto
+  })
+  .catch((err) => {
+    console.log("Error. La solicitud ha fallado: ", err);
+  });*/
