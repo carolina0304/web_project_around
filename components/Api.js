@@ -14,10 +14,31 @@ export default class Api {
   }
 
   //Obtener todas las cartas
-  getInitialCards() {}
-  //Agregar una card
+  getInitialCards() {
+    return fetch(`${this._baseurl}/cards`, {
+      methor: "GET",
+      headers: this._headers,
+    }).then((res) => this._ApiVerification(res));
+  }
 
+  //Agregar una card
+  addCard(data) {
+    return fetch(`${this._baseurl}/cards`, {
+      method: "POST",
+      headers: this._headers,
+      body: JSON.stringify({
+        name: data.name,
+        link: data.link,
+      }),
+    }).then((res) => this._ApiVerification(res));
+  }
   //Quitar una card
+  deleteCard(cardId) {
+    return fetch(`${this._baseurl}/cards/${cardId}`, {
+      method: "DELETE",
+      headers: this._headers,
+    }).then((res) => this._ApiVerification(res));
+  }
 
   //Obtener la info del usuario
   getUserInfo(data) {
