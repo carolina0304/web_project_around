@@ -39,14 +39,14 @@
               <img src="./images/Editarperfil.png" alt="Editar icono" />
             </button>
             <div class="profile__name">
-              <h1 class="profile__namenames" id="name">Nombre</h1>
+              <h1 class="profile__namenames" id="name">Arlene</h1>
               <img
                 src="./images/EditButton.png"
                 alt="editar boton"
                 class="profile__nameeditbutton"
                 id="nameedit-button"
               />
-              <p class="profile__namesubname" id="about">Ocupacion</p>
+              <p class="profile__namesubname" id="about">Arquitecta</p>
             </div>
             <img
               src="./images/AddButton.png"
@@ -191,6 +191,66 @@
             <p class="popup__text"></p>
           </div>
         </div>
+      </div>
+      <!--Pop Cambiar foto de perfil-->
+      <div class="popup" id="popup-editperfil">
+        <form
+          action="#"
+          class="popup__form"
+          id="popup__editperfil-form"
+          novalidate
+        >
+          <button id="popupclose_editperfil" type="button" class="popup__close">
+            x
+          </button>
+          <h2 class="popup__title">Cambiar foto de perfil</h2>
+          <fieldset class="popup__fieldset">
+            <label id="labelenlace" class="popup__lugar-label"></label>
+            <input
+              type="url"
+              class="popup__input popup__input_type_error"
+              id="perfil-enlace"
+              name="url"
+              placeholder="URL de imagen"
+              required
+            />
+            <span class="popup__input-error subname-enlace-error"
+              >Por favor, Introduce una imagen.</span
+            >
+            <button
+              id="popup_guardar"
+              type="submit"
+              class="popup__button popup__button_disabled"
+              disabled
+            >
+              Guardar
+            </button>
+          </fieldset>
+        </form>
+      </div>
+      <!--Pop up para eliminar la carta-->
+      <div class="popup" id="popup-deletecard">
+        <form
+          action="#"
+          class="popup__form"
+          id="popup__deletecard-form"
+          novalidate
+        >
+          <button id="popupclose_deletecard" type="button" class="popup__close">
+            x
+          </button>
+          <h2 class="popup__title">¿Estas seguro?</h2>
+          <fieldset class="popup__fieldset">
+            <button
+              id="popup_guardar"
+              type="submit"
+              class="popup__button popup__button_disabled"
+              disabled
+            >
+              Si
+            </button>
+          </fieldset>
+        </form>
       </div>
     </div>
     <script src="./pages/index.js" type="module"></script>
