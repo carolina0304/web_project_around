@@ -76,6 +76,17 @@
   opacity: 60%;
 }
 
+.profile__editavatar {
+  width: 26px;
+  height: 26px;
+  left: 370px;
+  top: 215px;
+  position: absolute;
+  cursor: pointer;
+  background: none;
+  border: none;
+}
+
 @media screen and (max-width: 1024px) {
   .profile {
     max-width: 100%;
@@ -108,6 +119,9 @@
   .profile__infoaddbutton {
     width: 130px;
     margin-left: -80px;
+  }
+  .profile__editavatar {
+    left: 255px;
   }
 }
 
@@ -154,5 +168,9 @@
   .profile__infoaddbutton {
     width: 282px;
     margin: 86px auto 0;
+  }
+  .profile__editavatar {
+    left: 140px;
+    top: 180px;
   }
 }
