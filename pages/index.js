@@ -58,7 +58,13 @@ import PopupWithImage from "../components/PopupWithImage.js";
 
 import UserInfo from "../components/UserInfo.js";
 
+import PopupWithConfirmation from "../components/PopupWithConfirmation.js";
+
 import Api from "../components/Api.js";
+
+/*Para confirmar eliminar la carta
+const deleteCard = new PopupWithConfirmation("#popupclose_deletecard");
+deleteCard.setEventListeners();*/
 
 const popupWithImage = new PopupWithImage("#popupimagebig");
 popupWithImage.setEventListeners();
@@ -209,6 +215,15 @@ const api = new Api({
     authorization: "ac2a5b08-54d4-4f90-9a16-02090561c004",
   },
 });
+
+api
+  .getInitialCards()
+  .then((result) => {
+    // procesa el resultado
+  })
+  .catch((err) => {
+    console.log(err); // registra el error en la consola
+  });
 
 /*fetch("https://around-api.es.tripleten-services.com/v1/cards/", {
   method: "GET",
