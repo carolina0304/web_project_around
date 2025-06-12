@@ -62,6 +62,15 @@ import PopupWithConfirmation from "../components/PopupWithConfirmation.js";
 
 import Api from "../components/Api.js";
 
+//Hacer solicitud
+const api = new Api({
+  baseurl: "https://around-api.es.tripleten-services.com/v1/",
+  headers: {
+    "content-type": "application/json; charset=UTF-8",
+    authorization: "ac2a5b08-54d4-4f90-9a16-02090561c004",
+  },
+});
+
 //Para confirmar eliminar la carta
 const deleteCard = new PopupWithConfirmation("#popupclose_deletecard");
 /*deleteCard.setEventListeners();*/
@@ -74,6 +83,14 @@ const userInfo = new UserInfo({
   jobSelector: ".profile__namesubname",
   avatarSelector: ".profile__info",
 });
+
+/*api;
+
+.getUserInfoAndCards()
+.then(({userInfo, cards}) => {
+  userInfo.
+})*/
+
 //Modificar el profile//
 const formEdit = new PopupWithForm(".popup", ".popup__form", (formData) => {
   userInfo.setUserInfo({
@@ -208,23 +225,14 @@ document.addEventListener("click", (event) => {
   }
 });
 
-//Hacer solicitud
-const api = new Api({
-  baseurl: "https://around-api.es.tripleten-services.com/v1/",
-  headers: {
-    "content-type": "application/json; charset=UTF-8",
-    authorization: "ac2a5b08-54d4-4f90-9a16-02090561c004",
-  },
-});
-
-api
+/*api
   .getInitialCards()
   .then((result) => {
     // procesa el resultado
   })
   .catch((err) => {
     console.log(err); // registra el error en la consola
-  });
+  });*-
 
 /*fetch("https://around-api.es.tripleten-services.com/v1/cards/", {
   method: "GET",

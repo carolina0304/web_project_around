@@ -84,4 +84,16 @@ export default class Api {
       headers: this._headers,
     }).then(this._ApiVerification);
   }
+
+  /* async getUserInfoAndCards() {
+    try {
+      const [userInfo, cards] = await Promise.all([
+        this.getUserInfo(),
+        this.getInitialCards(),
+      ]);
+      return { userInfo, cards };
+    } catch (error) {
+      return { userInfo, cards };
+    }
+  }*/
 }
