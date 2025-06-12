@@ -62,9 +62,9 @@ import PopupWithConfirmation from "../components/PopupWithConfirmation.js";
 
 import Api from "../components/Api.js";
 
-/*Para confirmar eliminar la carta
+//Para confirmar eliminar la carta
 const deleteCard = new PopupWithConfirmation("#popupclose_deletecard");
-deleteCard.setEventListeners();*/
+/*deleteCard.setEventListeners();*/
 
 const popupWithImage = new PopupWithImage("#popupimagebig");
 popupWithImage.setEventListeners();
@@ -72,6 +72,7 @@ popupWithImage.setEventListeners();
 const userInfo = new UserInfo({
   nameSelector: ".profile__namenames",
   jobSelector: ".profile__namesubname",
+  avatarSelector: ".profile__info",
 });
 //Modificar el profile//
 const formEdit = new PopupWithForm(".popup", ".popup__form", (formData) => {
@@ -136,7 +137,7 @@ const element = document.querySelector(".element");
 const handleCardFormSubmit = () => {
   const card = { link: inputenlace.value, name: inputtitle.value };
   const cardElement = new Card("#template", card, (name, link) => {
-    popupWithImage.open({ name, link });
+    popupWithImage.open({ name, link }), deleteCard, api;
   });
   const cards = document.querySelector(".element");
   cards.prepend(cardElement.createCard());
@@ -152,7 +153,7 @@ const cardsList = new Section(
     renderer: (data) => {
       cardsList.addItem(
         new Card("#template", data, (name, link) => {
-          popupWithImage.open({ name, link });
+          popupWithImage.open({ name, link }), deleteCard, api;
         }).createCard()
       );
     },
