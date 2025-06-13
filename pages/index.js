@@ -72,8 +72,8 @@ const api = new Api({
 });
 
 //Para confirmar eliminar la carta
-const deleteCard = new PopupWithConfirmation("#popupclose_deletecard");
-/*deleteCard.setEventListeners();*/
+const deleteCard = new PopupWithConfirmation("#popup-deletecard");
+deleteCard.setEventListeners();
 
 const popupWithImage = new PopupWithImage("#popupimagebig");
 popupWithImage.setEventListeners();
@@ -153,9 +153,16 @@ const element = document.querySelector(".element");
 //crea la carta de nuevo lugar
 const handleCardFormSubmit = () => {
   const card = { link: inputenlace.value, name: inputtitle.value };
-  const cardElement = new Card("#template", card, (name, link) => {
-    popupWithImage.open({ name, link }), deleteCard, api;
-  });
+  const cardElement = new Card(
+    "#template",
+    card,
+    "1",
+    api,
+    deleteCard.open,
+    (name, link) => {
+      popupWithImage.open({ name, link });
+    }
+  );
   const cards = document.querySelector(".element");
   cards.prepend(cardElement.createCard());
   FormAdd.close();
@@ -164,13 +171,13 @@ const handleCardFormSubmit = () => {
 // CLASE SECTION
 const container = document.querySelector(".element");
 
-const cardsList = new Section(
+/*const cardsList = new Section(
   {
     items: initialCards,
     renderer: (data) => {
       cardsList.addItem(
-        new Card("#template", data, (name, link) => {
-          popupWithImage.open({ name, link }), deleteCard, api;
+        new Card("#template", data, api, "1", deleteCard.open, (name, link) => {
+          popupWithImage.open({ name, link });
         }).createCard()
       );
     },
@@ -178,7 +185,7 @@ const cardsList = new Section(
   container
 );
 
-cardsList.renderItem();
+cardsList.renderItem();*/
 
 //popup editar
 const handleProfileFormSubmit = (evt) => {
@@ -225,6 +232,37 @@ document.addEventListener("click", (event) => {
   }
 });
 
+api
+  .getInitialCards()
+  .then((result) => {
+    // procesa el resultado
+    console.log(result);
+    const cardsList = new Section(
+      {
+        items: result,
+        renderer: (data) => {
+          cardsList.addItem(
+            new Card(
+              "#template",
+              data,
+              api,
+              "1",
+              deleteCard.open,
+              (name, link) => {
+                popupWithImage.open({ name, link });
+              }
+            ).createCard()
+          );
+        },
+      },
+      container
+    );
+
+    cardsList.renderItem();
+  })
+  .catch((err) => {
+    console.log(err); // registra el error en la consola
+  });
 /*api
   .getInitialCards()
   .then((result) => {

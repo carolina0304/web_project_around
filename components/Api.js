@@ -50,7 +50,7 @@ export default class Api {
 
   // Método para actualizar la información del usuario++++
   updateUserInfo(data) {
-    return fetch(`${this._baseUrl}/users/me`, {
+    return fetch(`${this._baseurl}/users/me`, {
       method: "PATCH",
       headers: this._headers,
       body: JSON.stringify({
@@ -71,7 +71,7 @@ export default class Api {
 
   //Actualizar el estado del like+++++++
   addLike(cardId) {
-    return fetch(`${this._baseUrl}/cards/${cardId}/likes`, {
+    return fetch(`${this._baseurl}/cards/${cardId}/likes`, {
       method: "PUT",
       headers: this._headers,
     }).then(this._ApiVerification);
@@ -79,7 +79,7 @@ export default class Api {
 
   //Metodo para eliminar like++++++++++++
   removeLike(cardId) {
-    return fetch(`${this._baseUrl}/cards/${cardId}/likes`, {
+    return fetch(`${this._baseurl}/cards/${cardId}/likes`, {
       method: "DELETE",
       headers: this._headers,
     }).then(this._ApiVerification);

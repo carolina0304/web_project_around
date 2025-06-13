@@ -1,7 +1,7 @@
 class Card {
   constructor(
     cardSelector,
-    { name, link, ownerId, cardId, isliked },
+    { name, link, ownerId, cardId, isliked, _id },
     api,
     userId,
     handleDeleteclick,
@@ -46,7 +46,9 @@ class Card {
   _setEventListeners() {
     //Evento de eliminar carta
     this._cardDelete.addEventListener("click", () => {
-      this._element.remove();
+      //this._element.remove();
+      //La apertura del popup de confirmacion
+      this._handleDeleteClick();
     });
     //Evento de like
     this._cardlike.addEventListener("click", () => {
