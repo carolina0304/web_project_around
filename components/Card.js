@@ -3,7 +3,7 @@ class Card {
     cardSelector,
     { name, link, ownerId, cardId, isliked, _id },
     api,
-    userId,
+    /*userId,*/
     handleDeleteclick,
     handlePopupImageOpen
   ) {
@@ -14,7 +14,7 @@ class Card {
     this._cardId = cardId;
     this._isLiked = isliked;
     this._api = api;
-    this._userId = userId;
+    /*this._userId = userId;*/
     this._handleDeleteClick = handleDeleteclick;
     this._handlePopupImageOpen = handlePopupImageOpen;
   }

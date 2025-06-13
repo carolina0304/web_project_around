@@ -20,6 +20,9 @@ const popupform = document.querySelector("#popup__formedit");
 const inputname = document.querySelector("#name");
 const inputlastname = document.querySelector("#subname");
 
+const buttoneditperfil = document.querySelector(".profile__editavatar");
+/*const buttonpopupeditperfil = document.querySelector("#popup-editperfil");*/
+
 const initialCards = [
   {
     name: "Valle de Yosemite",
@@ -125,6 +128,9 @@ buttonadd.addEventListener("click", () => {
   FormAdd.open();
 });
 
+const formeditAvatar = new PopupWithForm("#popup-editperfil", ".popup__form");
+formeditAvatar.setEventListeners();
+
 const config = {
   formSelector: ".popup__form",
   inputSelector: ".popup__input",
@@ -156,9 +162,8 @@ const handleCardFormSubmit = () => {
   const cardElement = new Card(
     "#template",
     card,
-    "1",
     api,
-    deleteCard.open,
+    () => deleteCard.open(),
     (name, link) => {
       popupWithImage.open({ name, link });
     }
@@ -205,6 +210,10 @@ popupclose.addEventListener("click", handlePopupClose);
 buttonadd.addEventListener("click", openPopupAddOpen);
 closeplace.addEventListener("click", openPopupAddClose);
 
+buttoneditperfil.addEventListener("click", () => {
+  formeditAvatar.open();
+});
+
 popupGuardar.addEventListener("click", (evt) => {
   evt.preventDefault();
   handleCardFormSubmit();
@@ -246,8 +255,7 @@ api
               "#template",
               data,
               api,
-              "1",
-              deleteCard.open,
+              () => deleteCard.open(),
               (name, link) => {
                 popupWithImage.open({ name, link });
               }
