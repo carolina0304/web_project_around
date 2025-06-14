@@ -13,6 +13,7 @@ class Card {
     this._ownerId = ownerId;
     this._cardId = cardId;
     this._isLiked = isliked;
+    /*this._id = Id;*/
     this._api = api;
     /*this._userId = userId;*/
     this._handleDeleteClick = handleDeleteclick;

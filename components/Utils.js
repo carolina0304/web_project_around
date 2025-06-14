@@ -37,7 +37,7 @@ export function renderLoading(
     buttonElement.textContent = "Guardando...";
     buttonElement.disabled = true;
   } else {
-    buttonElement.textContent = defaultText;
-    buttonElement.disabled = false;
+    buttonElement = defaultText;
+    buttonElement = false;
   }
 }

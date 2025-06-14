@@ -23,6 +23,8 @@ const inputlastname = document.querySelector("#subname");
 const buttoneditperfil = document.querySelector(".profile__editavatar");
 /*const buttonpopupeditperfil = document.querySelector("#popup-editperfil");*/
 
+const avatarImage = document.querySelector(".profile__infoavatar");
+
 const initialCards = [
   {
     name: "Valle de Yosemite",
@@ -89,7 +91,7 @@ const userInfo = new UserInfo({
   avatarSelector: ".profile__info",
 });
 
-let userId;
+/*let userId;
 
 api.getUserInfo().then(function (user) {
   userId = user._id;
@@ -97,15 +99,42 @@ api.getUserInfo().then(function (user) {
   userInfo.setUserAvatar(user.avatar);
 
   return api.getInitialCards();
-});
+});*/
 
-//Modificar el profile//
+const config = {
+  formSelector: ".popup__form",
+  inputSelector: ".popup__input",
+  submitButtonSelector: ".popup__button",
+  inactiveButtonClass: "popup__button_disabled",
+  errorClass: "popup__button_disabled",
+  inputErrorClass: "popup__input-error",
+};
+//Modificar el nombre del perfil//
 const formEdit = new PopupWithForm(".popup", ".popup__form", (formData) => {
+  const saveButton = formEdit._popup.querySelector(config.submitButtonSelector);
+  renderLoading(true, saveButton);
   userInfo.setUserInfo({
     name: formData.name,
     job: formData.job,
   });
-  formEdit.close();
+  /* const saveButton = formEdit._popup.querySelector(config.submitButtonSelector);*/
+  renderLoading(true.saveButton);
+
+  api
+    .updateUserInfo({ name: formData.first, about: formData.second })
+    .then((res) => {
+      nameSelector.textContent = res.name;
+      jobSelector.textContent = res.about;
+      formEdit.close();
+    })
+    .catch((err) => console.log(err))
+    .finally(() => renderLoading(false, saveButton));
+
+  /*userInfo.setUserInfo({
+    name: formData.name,
+    job: formData.job,
+  });
+  formEdit.close();*/
 });
 
 formEdit.setEventListeners();
@@ -117,7 +146,7 @@ button.addEventListener("click", () => {
   formEdit.open();
 });
 
-//agregar url
+//agregar una carta url
 const FormAdd = new PopupWithForm("#popuplugar", ".popup__form", (formData) => {
   const newCard = createCard(formData.title, formData.url);
   cardsList.renderItem(newCard);
@@ -134,17 +163,29 @@ buttonadd.addEventListener("click", () => {
 });
 
 //Instancia de Popup para editar perfil
-const formeditAvatar = new PopupWithForm("#popup-editperfil", ".popup__form");
-formeditAvatar.setEventListeners();
+const formeditAvatar = new PopupWithForm(
+  "#popup-editperfil",
+  ".popup__form",
+  (formData) => {
+    console.log(formData);
+    const saveButton = formeditAvatar._popup.querySelector(
+      config.submitButtonSelector
+    );
+    renderLoading(true, saveButton);
 
-const config = {
-  formSelector: ".popup__form",
-  inputSelector: ".popup__input",
-  submitButtonSelector: ".popup__button",
-  inactiveButtonClass: "popup__button_disabled",
-  errorClass: "popup__button_disabled",
-  inputErrorClass: "popup__input-error",
-};
+    api
+
+      .AvatarUpdate(formData.url)
+      .then((res) => {
+        console.log(res);
+        avatarImage.src = res.avatar;
+        formeditAvatar.close();
+      })
+      .catch((err) => console.log(err))
+      .finally(() => renderLoading(false, saveButton));
+  }
+);
+formeditAvatar.setEventListeners();
 
 //Config de validacion para editar perfil
 const cardForm = document.querySelector("#popup__formedit");
