@@ -65,6 +65,8 @@ import PopupWithConfirmation from "../components/PopupWithConfirmation.js";
 
 import Api from "../components/Api.js";
 
+import { renderLoading } from "../components/Utils.js";
+
 //Hacer solicitud
 const api = new Api({
   baseurl: "https://around-api.es.tripleten-services.com/v1/",
@@ -87,12 +89,15 @@ const userInfo = new UserInfo({
   avatarSelector: ".profile__info",
 });
 
-/*api;
+let userId;
 
-.getUserInfoAndCards()
-.then(({userInfo, cards}) => {
-  userInfo.
-})*/
+api.getUserInfo().then(function (user) {
+  userId = user._id;
+  userInfo.setUserInfo({ name: user.name, about: user.about });
+  userInfo.setUserAvatar(user.avatar);
+
+  return api.getInitialCards();
+});
 
 //Modificar el profile//
 const formEdit = new PopupWithForm(".popup", ".popup__form", (formData) => {
@@ -128,6 +133,7 @@ buttonadd.addEventListener("click", () => {
   FormAdd.open();
 });
 
+//Instancia de Popup para editar perfil
 const formeditAvatar = new PopupWithForm("#popup-editperfil", ".popup__form");
 formeditAvatar.setEventListeners();
 
@@ -140,13 +146,20 @@ const config = {
   inputErrorClass: "popup__input-error",
 };
 
+//Config de validacion para editar perfil
 const cardForm = document.querySelector("#popup__formedit");
 const cardFormValidator = new FormValidator(config, cardForm);
 cardFormValidator.enableValidation();
 
+// Config de validacion para agregar card
 const ProfileForm = document.querySelector("#popup__lugar-form");
 const ProfileFormValidator = new FormValidator(config, ProfileForm);
 ProfileFormValidator.enableValidation();
+
+//Config de validacion para editar perfil
+const ChangeAvatar = document.querySelector("#popup__editperfil-form");
+const ChangeAvatarValidator = new FormValidator(config, ChangeAvatar);
+ChangeAvatarValidator.enableValidation();
 
 import {
   handlePopupOpen,
@@ -271,6 +284,7 @@ api
   .catch((err) => {
     console.log(err); // registra el error en la consola
   });
+
 /*api
   .getInitialCards()
   .then((result) => {
