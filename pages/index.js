@@ -312,6 +312,16 @@ api
               () => deleteCard.open(),
               (name, link) => {
                 popupWithImage.open({ name, link });
+                deleteCard.setSubmitAction(() => {
+                  api
+                    .deleteCard(cardId)
+                    .then(() => {
+                      cardElement.remove();
+                      deleteCard.close();
+                    })
+                    .catch((err) => console.log(err));
+                });
+                deleteCard.open();
               }
             ).createCard()
           );
