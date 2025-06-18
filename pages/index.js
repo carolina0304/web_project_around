@@ -213,18 +213,20 @@ const element = document.querySelector(".element");
 //crea la carta de nuevo lugar
 const handleCardFormSubmit = () => {
   const card = { link: inputenlace.value, name: inputtitle.value };
-  const cardElement = new Card(
-    "#template",
-    card,
-    api,
-    () => deleteCard.open(),
-    (name, link) => {
-      popupWithImage.open({ name, link });
-    }
-  );
-  const cards = document.querySelector(".element");
-  cards.prepend(cardElement.createCard());
-  FormAdd.close();
+  api.addCard(card).then(() => {
+    const cardElement = new Card(
+      "#template",
+      card,
+      api,
+      () => deleteCard.open(),
+      (name, link) => {
+        popupWithImage.open({ name, link });
+      }
+    );
+    const cards = document.querySelector(".element");
+    cards.prepend(cardElement.createCard());
+    FormAdd.close();
+  });
 };
 
 // CLASE SECTION
