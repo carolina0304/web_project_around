@@ -71,10 +71,10 @@ import { renderLoading } from "../components/Utils.js";
 
 //Hacer solicitud
 const api = new Api({
-  baseurl: "https://around-api.es.tripleten-services.com/v1/",
+  baseUrl: "https://around-api.es.tripleten-services.com/v1",
   headers: {
     "content-type": "application/json; charset=UTF-8",
-    authorization: "ac2a5b08-54d4-4f90-9a16-02090561c004",
+    authorization: "0057b409-6bb9-49e8-86f9-882549209061",
   },
 });
 
@@ -88,8 +88,16 @@ popupWithImage.setEventListeners();
 const userInfo = new UserInfo({
   nameSelector: ".profile__namenames",
   jobSelector: ".profile__namesubname",
-  avatarSelector: ".profile__info",
+  avatarSelector: "#avatar",
 });
+
+api
+  .getUserInfo()
+  .then((data) => {
+    userInfo.setUserInfo({ name: data.name, job: data.about });
+    userInfo.setUserAvatar(data.avatar);
+  })
+  .catch(console.error);
 
 /*let userId;
 
@@ -112,13 +120,36 @@ const config = {
 //Modificar el nombre del perfil//
 const formEdit = new PopupWithForm(".popup", ".popup__form", (formData) => {
   const saveButton = formEdit._popup.querySelector(config.submitButtonSelector);
+  // Mostrar "Guardando..."
   renderLoading(true, saveButton);
-  userInfo.setUserInfo({
+
+  // Enviar datos reales del formulario
+  api
+    .updateUserInfo({ name: formData.name, about: formData.job })
+    .then((res) => {
+      // Actualiza los datos del perfil en pantalla
+      userInfo.setUserInfo({
+        name: res.name,
+        job: res.about,
+      });
+      formEdit.close();
+    })
+    .catch((err) => {
+      console.error("Error al actualizar perfil:", err);
+    })
+    .finally(() => {
+      renderLoading(false, saveButton);
+    });
+});
+
+formEdit.setEventListeners();
+
+/*userInfo.setUserInfo({
     name: formData.name,
     job: formData.job,
   });
   /* const saveButton = formEdit._popup.querySelector(config.submitButtonSelector);*/
-  renderLoading(true.saveButton);
+/*renderLoading(true.saveButton);
 
   api
     .updateUserInfo({ name: formData.first, about: formData.second })
@@ -134,10 +165,8 @@ const formEdit = new PopupWithForm(".popup", ".popup__form", (formData) => {
     name: formData.name,
     job: formData.job,
   });
-  formEdit.close();*/
-});
-
-formEdit.setEventListeners();
+  formEdit.close();
+});*/
 
 const button = document.querySelector(".profile__nameeditbutton");
 button.addEventListener("click", () => {
@@ -167,7 +196,7 @@ const formeditAvatar = new PopupWithForm(
   "#popup-editperfil",
   ".popup__form",
   (formData) => {
-    console.log(formData);
+    console.log(formData.baseUrl);
     const saveButton = formeditAvatar._popup.querySelector(
       config.submitButtonSelector
     );
@@ -177,7 +206,6 @@ const formeditAvatar = new PopupWithForm(
 
       .AvatarUpdate(formData.url)
       .then((res) => {
-        console.log(res);
         avatarImage.src = res.avatar;
         formeditAvatar.close();
       })
