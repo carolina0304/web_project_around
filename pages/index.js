@@ -351,7 +351,7 @@ api
                     })
                     .catch((err) => console.log(err));
                 });
-                deleteCard.open();
+                /*deleteCard.open();*/
               }
             ).createCard()
           );

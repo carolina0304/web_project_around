@@ -1,9 +1,8 @@
 class Card {
   constructor(
     cardSelector,
-    { name, link, ownerId, cardId, isliked, _id },
+    { name, link, ownerId, cardId, isliked },
     api,
-    /*userId,*/
     handleDeleteclick,
     handlePopupImageOpen
   ) {
@@ -13,9 +12,8 @@ class Card {
     this._ownerId = ownerId;
     this._cardId = cardId;
     this._isLiked = isliked;
-    /*this._id = Id;*/
     this._api = api;
-    /*this._userId = userId;*/
+
     this._handleDeleteClick = handleDeleteclick;
     this._handlePopupImageOpen = handlePopupImageOpen;
   }
@@ -49,7 +47,7 @@ class Card {
     this._cardDelete.addEventListener("click", () => {
       //this._element.remove();
       //La apertura del popup de confirmacion
-      this._handleDeleteClick();
+      this._handleDeleteClick(this._cardId, this._element);
     });
     //Evento de like
     this._cardlike.addEventListener("click", () => {
@@ -58,17 +56,17 @@ class Card {
       );
       if (isLiked) {
         this._api
-          .removeLike(this._cardlike)
-          .then((res) => {
-            this._isLiked = res.isLiked;
+          .removeLike(this._cardId)
+          .then(() => {
+            this._isLiked = false;
             this._updateLikeState();
           })
           .catch((err) => console.log(err));
       } else {
         this._api
-          .addLike(this._cardlike)
-          .then((res) => {
-            this._isLiked = res.isLiked;
+          .addLike(this._cardId)
+          .then(() => {
+            this._isLiked = true;
             this._updateLikeState();
           })
           .catch((err) => console.log(err));

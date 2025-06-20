@@ -21,7 +21,7 @@ export default class Api {
   //Obtener todas las cartas++++++++++
   getInitialCards() {
     return fetch(`${this._baseUrl}/cards`, {
-      methor: "GET",
+      method: "GET",
       headers: this._headers,
     }).then(this._ApiVerification);
   }
@@ -77,7 +77,7 @@ export default class Api {
   //Actualizar el estado del like+++++++
 
   addLike(cardId) {
-    return fetch(`${this._baseUrl}/cards/likes/${cardId}`, {
+    return fetch(`${this._baseUrl}/cards/${cardId}/likes`, {
       method: "PUT",
       headers: this._headers,
     }).then(this._ApiVerification);
@@ -85,7 +85,7 @@ export default class Api {
 
   //Metodo para eliminar like++++++++++++
   removeLike(cardId) {
-    return fetch(`${this._baseUrl}/cards/likes/${cardId}`, {
+    return fetch(`${this._baseUrl}/cards/${cardId}/likes`, {
       method: "DELETE",
       headers: this._headers,
     }).then(this._ApiVerification);
