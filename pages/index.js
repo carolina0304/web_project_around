@@ -99,16 +99,6 @@ api
   })
   .catch(console.error);
 
-/*let userId;
-
-api.getUserInfo().then(function (user) {
-  userId = user._id;
-  userInfo.setUserInfo({ name: user.name, about: user.about });
-  userInfo.setUserAvatar(user.avatar);
-
-  return api.getInitialCards();
-});*/
-
 const config = {
   formSelector: ".popup__form",
   inputSelector: ".popup__input",
@@ -143,30 +133,6 @@ const formEdit = new PopupWithForm(".popup", ".popup__form", (formData) => {
 });
 
 formEdit.setEventListeners();
-
-/*userInfo.setUserInfo({
-    name: formData.name,
-    job: formData.job,
-  });
-  /* const saveButton = formEdit._popup.querySelector(config.submitButtonSelector);*/
-/*renderLoading(true.saveButton);
-
-  api
-    .updateUserInfo({ name: formData.first, about: formData.second })
-    .then((res) => {
-      nameSelector.textContent = res.name;
-      jobSelector.textContent = res.about;
-      formEdit.close();
-    })
-    .catch((err) => console.log(err))
-    .finally(() => renderLoading(false, saveButton));
-
-  /*userInfo.setUserInfo({
-    name: formData.name,
-    job: formData.job,
-  });
-  formEdit.close();
-});*/
 
 const button = document.querySelector(".profile__nameeditbutton");
 button.addEventListener("click", () => {
@@ -260,22 +226,6 @@ const handleCardFormSubmit = () => {
 // CLASE SECTION
 const container = document.querySelector(".element");
 
-/*const cardsList = new Section(
-  {
-    items: initialCards,
-    renderer: (data) => {
-      cardsList.addItem(
-        new Card("#template", data, api, "1", deleteCard.open, (name, link) => {
-          popupWithImage.open({ name, link });
-        }).createCard()
-      );
-    },
-  },
-  container
-);
-
-cardsList.renderItem();*/
-
 //popup editar
 const handleProfileFormSubmit = (evt) => {
   evt.preventDefault();
@@ -368,29 +318,3 @@ api
   .catch((err) => {
     console.log(err); // registra el error en la consola
   });
-
-/*api
-  .getInitialCards()
-  .then((result) => {
-    // procesa el resultado
-  })
-  .catch((err) => {
-    console.log(err); // registra el error en la consola
-  });*-
-
-/*fetch("https://around-api.es.tripleten-services.com/v1/cards/", {
-  method: "GET",
-});
-
-// a continuación hay una solicitud GET, aunque no lo indiquemos explícitamente en el método fetch()
-
-fetch("https://around-api.es.tripleten-services.com/v1/users/me")
-  .then((res) => {
-    return res.json();
-  })
-  .then((data) => {
-    console.log(data.user.name); // si se ejecuta este bloque then(), los datos son un objeto
-  })
-  .catch((err) => {
-    console.log("Error. La solicitud ha fallado: ", err);
-  });*/

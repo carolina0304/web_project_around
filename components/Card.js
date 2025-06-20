@@ -45,7 +45,6 @@ class Card {
   _setEventListeners() {
     //Evento de eliminar carta
     this._cardDelete.addEventListener("click", () => {
-      //this._element.remove();
       //La apertura del popup de confirmacion
       this._handleDeleteClick(this._cardId, this._element);
     });

@@ -11,12 +11,7 @@ export default class Api {
     if (res.ok) return res.json();
     return Promise.reject(`Error: ${res.status}`);
   }
-  /*_ApiVerification(res) {
-    if (res.ok) {
-      return res.json();
-    }
-    return Promise.reject(`Error: ${res.status}`);
-  }*/
+
 
   //Obtener todas las cartas++++++++++
   getInitialCards() {
@@ -91,15 +86,4 @@ export default class Api {
     }).then(this._ApiVerification);
   }
 
-  /* async getUserInfoAndCards() {
-    try {
-      const [userInfo, cards] = await Promise.all([
-        this.getUserInfo(),
-        this.getInitialCards(),
-      ]);
-      return { userInfo, cards };
-    } catch (error) {
-      return { userInfo, cards };
-    }
-  }*/
 }
