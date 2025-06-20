@@ -1,7 +1,7 @@
 class Card {
   constructor(
     cardSelector,
-    { name, link, ownerId, cardId, isliked },
+    { name, link, ownerId, _id, isliked },
     api,
     handleDeleteclick,
     handlePopupImageOpen
@@ -10,7 +10,7 @@ class Card {
     this._image = link;
     this._description = name;
     this._ownerId = ownerId;
-    this._cardId = cardId;
+    this._cardId = _id;
     this._isLiked = isliked;
     this._api = api;
 
