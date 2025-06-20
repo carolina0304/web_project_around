@@ -89,5 +89,10 @@ class Card {
   getHtmlCard() {
     return this.createCard();
   }
+
+  //Metodo para obtener id
+  getId() {
+    return this._cardId;
+  }
 }
 export default Card;

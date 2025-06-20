@@ -339,9 +339,8 @@ api
               "#template",
               data,
               api,
-              () => deleteCard.open(),
-              (name, link) => {
-                popupWithImage.open({ name, link });
+              (cardId, cardElement) => {
+                deleteCard.open();
                 deleteCard.setSubmitAction(() => {
                   api
                     .deleteCard(cardId)
@@ -351,6 +350,10 @@ api
                     })
                     .catch((err) => console.log(err));
                 });
+              },
+              (name, link) => {
+                popupWithImage.open({ name, link });
+
                 /*deleteCard.open();*/
               }
             ).createCard()
