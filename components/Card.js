@@ -1,7 +1,7 @@
 class Card {
   constructor(
     cardSelector,
-    { name, link, ownerId, _id, isliked },
+    { name, link, ownerId, _id, isLiked },
     api,
     handleDeleteclick,
     handlePopupImageOpen
@@ -11,7 +11,7 @@ class Card {
     this._description = name;
     this._ownerId = ownerId;
     this._cardId = _id;
-    this._isLiked = isliked;
+    this._isLiked = isLiked;
     this._api = api;
 
     this._handleDeleteClick = handleDeleteclick;
@@ -33,6 +33,11 @@ class Card {
     this._cardName = this._element.querySelector(".element__contentparagraph");
     this._cardlike = this._element.querySelector(".element__contentlike");
     this._cardDelete = this._element.querySelector(".element__delete");
+
+    //validar el like
+    if (this._isLiked) {
+      this._cardlike.classList.add(".element__contentlike-active");
+    }
 
     this._cardImage.src = this._image;
     this._cardImage.alt = this._description;
